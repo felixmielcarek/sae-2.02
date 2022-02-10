@@ -6,7 +6,7 @@ Accessibilité dans un réseau aérien
 Mettre à jour les fichiers:
 
 ```
-git pull origin main
+git pull
 ```
 
 Pour mettre le fichier dans ceux à commit:
