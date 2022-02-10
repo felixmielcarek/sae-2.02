@@ -3,6 +3,12 @@ Accessibilité dans un réseau aérien
 
 ## Commande git
 
+Mettre à jour les fichiers:
+
+```
+git pull origin main
+```
+
 Pour mettre le fichier dans ceux à commit:
 
 ```
