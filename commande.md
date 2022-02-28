@@ -1,4 +1,4 @@
-# Liste des commandes (et teste si le commit marche)
+# Liste des commandes
 
 [Lien vers le tuto](https://developer.mozilla.org/fr/docs/Learn/Common_questions/Using_Github_pages)
 
