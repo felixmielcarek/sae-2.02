@@ -21,6 +21,12 @@ git config --global user.email "email@gmail.com"
 ```
 got config --global user.name "Le_nom"
 ```
+## Pour ajouter ton token pour éviter de le faire a chaque fois :
+
+```
+git config --global credential.helper cache
+```
+
 
 ```
 git commit -m 'message'
