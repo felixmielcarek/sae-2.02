@@ -1,14 +1,18 @@
 #include <iostream>
 #include <string>
+#include "network.hpp"
+#include "city.hpp"
 using namespace std;
-#include "Network.hpp"
-#include "City.hpp"
+using namespace aerial_network;
 
-void hw(string mess){
-    cout<<mess<<endl;
-}
 
 int main(){
-    hw("Hello world !");
+    cout << "----- Bienvenue à l'aéroport de Aulnat ----------"<< endl;
+    Network nw;
+    City clf{"Clermont-Ferrand",1};
+    City cas{"Castres",2};
+    nw.addCity(&clf);
+    cout << cas << endl;
+    nw.displayCities();
     return 0;
 }

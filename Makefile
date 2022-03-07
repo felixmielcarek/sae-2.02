@@ -13,11 +13,11 @@ OBJ=$(patsubst src/%.cpp,obj/%.o,$(SRC))
 
 #edition des liens : génération de l'exécutable à partir des .o 
 bin/exe: $(OBJ)
-	$(CC) $(OBJ) -o $@
+	LC_ALL=C $(CC) $(OBJ) -o $@
 
 # génération des .o à partir des .cpp et .hpp crrespondants : 
 obj/%.o: src/%.cpp 
-	$(CC) $(CFLAGS) -c $< -o $@
+	LC_ALL=C $(CC) $(CFLAGS) -c $< -o $@
 
 #nettoyage : destruction des .o et de l'exécutable
 clean:

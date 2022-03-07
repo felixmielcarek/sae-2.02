@@ -2,6 +2,7 @@
 #define CITY_HPP
 
 #include <string>
+#include <iostream>
 
 namespace aerial_network{
     class City{
@@ -9,8 +10,9 @@ namespace aerial_network{
         int number;
     public:
         City(std::string name,int number);
-        std::string getName();
-        int getNumber();
+        friend std::ostream& operator<<(std::ostream& s,const City& c);
+        std::string getName()const;
+        int getNumber()const;
     };
 } // namespace aerial_network
 
