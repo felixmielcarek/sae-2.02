@@ -2,15 +2,18 @@
 #define NETWORK_HPP
 
 #include <vector>
-#include "City.hpp"
+#include <iostream>
+#include "city.hpp"
 
 namespace aerial_network{
     class City;
     class Network{
-        vector<City> cities;
+        std::vector<City*> cities;
     public:
-        int addCity(City city);
+        int addCity(City* city);
+        void displayCities();
     };
+    
 } // namespace aerial_network
 
 #endif // NETWORK_HPP
