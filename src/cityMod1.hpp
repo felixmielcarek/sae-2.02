@@ -8,10 +8,10 @@
 namespace aerial_network{
 
     class CityMod1 : public City{
-        std::vector<City*> access;
+        std::vector<City*> dest;
     public:
         CityMod1(std::string nom);
-        void addAccess(City* c);
+        void addDest(City* c);
     };
 
 }; // namespace aerial_network
