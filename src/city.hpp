@@ -9,6 +9,8 @@ namespace aerial_network{
     protected:
         std::string name;
         City(std::string name);
+    public:
+        std::string getName() const;
     };
 } // namespace aerial_network
 
