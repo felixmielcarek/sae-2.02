@@ -7,26 +7,24 @@ namespace aerial_network{
     //fel
     void Network::addCities(){
         string tmpName;
+        City* c;
         
         cout << "Entrez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
         cin >> tmpName;
-        City* c = new CityMod1{tmpName};
-        cities.push_back(c);
 
-        // Problème pour quitter la boucle ! 
-        //(Entrer ne fonctionne pas + pas dans le bon sens le if :
-                    // -> meme si on donne la valeur d'arret on la rentre juste derriere
-        while(tmpName != ""){
-            cout << "Tapez 'Entrée' ou tapez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
-            cin >> tmpName;
+        while(tmpName != "-1"){
             c = new CityMod1{tmpName};
             cities.push_back(c);
+            cout << "Entrez '-1' si vous ne souhaitez pas rajouter de ville," << endl;
+            cout << "ou tapez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
+            cin >> tmpName;
         }
+
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
             (*it)->initDest(cities);
         }
-        
     }
+
     void Network::displayCities(){
         for(vector<City*>::iterator it=cities.begin(); it!=cities.end();it++){
             return;
