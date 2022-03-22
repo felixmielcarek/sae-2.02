@@ -9,6 +9,7 @@ using namespace aerial_network;
 int main(){
     cout << "----- Bienvenue à l'aéroport de Aulnat ----------"<< endl;
     Network nw;
+    nw.addCities();
     nw.displayCities();
     return 0;
 }

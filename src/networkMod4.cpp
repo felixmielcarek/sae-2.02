@@ -3,7 +3,7 @@
 
 namespace aerial_network{
     NetworkMod4::NetworkMod4()
-    : matrice{std::vector<bool> villes}{};
+    : matrix{std::vector<bool> cities}{};
 
     NetworkMod4::~NetworkMod4(){};
 
@@ -20,5 +20,5 @@ namespace aerial_network{
 
         }
     }
-}
 */
+}

@@ -8,13 +8,14 @@ namespace aerial_network{
         :City{nom}{}
 
     //Axel
-    //Il faut revoir les pointeur de city avec le vector cities --> pour remplir le vector dest
-    
     void CityMod1::initDest(vector<City*> cities){
         for(vector<City *>::iterator it=cities.begin();it!=cities.end();it++){ 
+            if (this==(*it)){
+                continue;
+            }
             while(1){
                 std::string choix;
-                cout << "La ville : " << this->name << "est elle une destination directe vers : " << (*it)->getName() << "(O/n)" << endl;
+                cout << "La ville : " << this->name << " est elle une destination directe vers : " << (*it)->getName() << "(O/n)" << endl;
                 cin >> choix;
                 if(choix != "O" && choix != "o" && choix!="N" && choix != "n"){
                     cout << "Donner une réponse valide : (O/n)" << endl;
@@ -29,6 +30,11 @@ namespace aerial_network{
                 }
             }
         }
+    }
+
+    // Axel
+    bool operator==(const City& c1, const City& c2){
+        return c1.getName()==c2.getName();
     }
 
 };// namespace aerial_network

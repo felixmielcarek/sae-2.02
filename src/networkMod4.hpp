@@ -12,7 +12,8 @@ namespace aerial_network{
             /* Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
             void addCity()override;
             void place();
+            
             */
     };
 };
-#ifndef NETWORKMOD4_HPP
+#endif // NETWORKMOD4_HP

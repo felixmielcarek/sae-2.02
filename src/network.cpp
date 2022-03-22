@@ -13,16 +13,17 @@ namespace aerial_network{
         City* c = new CityMod1{tmpName};
         cities.push_back(c);
 
+        // Problème pour quitter la boucle ! 
+        //(Entrer ne fonctionne pas + pas dans le bon sens le if :
+                    // -> meme si on donne la valeur d'arret on la rentre juste derriere
         while(tmpName != ""){
             cout << "Tapez 'Entrée' ou tapez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
             cin >> tmpName;
             c = new CityMod1{tmpName};
             cities.push_back(c);
         }
-
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
-            // appelle fonction de cityMod1
-            //it->initDest(cities);
+            (*it)->initDest(cities);
         }
         
     }
