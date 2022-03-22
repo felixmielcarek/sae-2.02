@@ -5,12 +5,13 @@
 #include <iostream>
 #include "city.hpp"
 
+//fel
 namespace aerial_network{
     class City;
     class Network{
         std::vector<City*> cities;
     public:
-        int addCity(City* city);
+        virtual void addCities();
         void displayCities();
     };
     
