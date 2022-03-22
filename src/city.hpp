@@ -6,13 +6,9 @@
 
 namespace aerial_network{
     class City{
+    protected:
         std::string name;
-        int number;
-    public:
-        City(std::string name,int number);
-        friend std::ostream& operator<<(std::ostream& s,const City& c);
-        std::string getName()const;
-        int getNumber()const;
+        City(std::string name);
     };
 } // namespace aerial_network
 

@@ -8,7 +8,7 @@ namespace aerial_network{
     }
     void Network::displayCities(){
         for(vector<City*>::iterator it=cities.begin(); it!=cities.end();it++){
-            cout << (*it)->getName() << " (" << (*it)->getNumber() << ")" << endl;
+            return;
         }
     }
 }
