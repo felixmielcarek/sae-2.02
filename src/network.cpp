@@ -24,10 +24,61 @@ namespace aerial_network{
             (*it)->initDest(cities);
         }
     }
-
+    
+    // Axel
     void Network::displayCities(){
         for(vector<City*>::iterator it=cities.begin(); it!=cities.end();it++){
-            return;
+            (*it)->displayCity();
+        }
+    }
+
+    // Axel
+    void Network::searchDest(){
+        
+        // AMERLIORER LE MENU (C'EST DU TEMPORAIRE)
+        // EN VRAI CA PUE LA MERDE COMMENT C'EST FAIT, MAIS DITES LE PAS HEIN
+        cout << "De quelle ville partez vous ?\n";
+        int count=1;
+        for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
+            cout << count << "- " << (*it)->getName() << endl;
+            count=count+1;
+        }
+        int choix;
+        cin >> choix;
+        
+        cout << "Dans quelle ville allez vous ?\n";
+        count=1;
+        for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
+            cout << count << "- " << (*it)->getName() << endl;
+            count=count+1;
+        }
+        int choix1;
+        cin >> choix1;
+        
+        vector<City*> tmp;
+        count=1;
+        City* c1;
+        City* c2;
+        for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
+            if(count==choix){
+                c1=*it;
+            }   
+            if(count==choix1){
+                c2=*it;
+            }
+            count=count+1;
+        }
+        if(c1==c2){
+            cout << "Vous êtres déjà sur place inutile de prendre un vole ! :D\n";
+        }
+        else{
+            int x=c1->searchDest(tmp,c2,1);
+            if(x==-1){
+                cout << "Il est impossible de se rendre à " << c2->getName() << endl;
+            }
+            else{
+                cout << "Vous pouvez aller a votre destination en " << x << " coups\n";
+            }
         }
     }
 }

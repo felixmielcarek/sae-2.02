@@ -43,7 +43,10 @@ int main(){
             cout << CYN "\n----- Bienvenue dans l'outil de création de réseau -----" NC << endl;
             Network nw;
             nw.addCities();
+            cout << CLEAR CYN "---- Réseau ----" NC << endl;
             nw.displayCities();
+            cout << endl;
+            nw.searchDest();
             cout << "(Appuyer sur Entrer pour continuer)\n";
             system("read");
             cout << CLEAR;
