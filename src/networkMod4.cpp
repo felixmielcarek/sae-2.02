@@ -4,6 +4,7 @@
 using namespace std;
 
 namespace aerial_network{
+    //fel
     NetworkMod4::~NetworkMod4(){
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;

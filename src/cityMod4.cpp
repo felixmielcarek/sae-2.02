@@ -6,11 +6,16 @@ namespace aerial_network{
     CityMod4::CityMod4(string name, int num)
         :City{name},num{num}{}
 
-    void initDest(vector<City*> cities){}
+    
+    void CityMod4::initDest(vector<City*> cities){
+        return;
+    }
 
-    void displayCity(){}
+    void CityMod4::displayCity(){
+        return;
+    }
 
-    int searchDest(vector<City*> tmp, City* city, int counter){
+    int CityMod4::searchDest(vector<City*> tmp, City* city, int counter){
         return 0;
     }
 } // aerial_network
