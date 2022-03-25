@@ -1,7 +1,7 @@
 #ifndef NETWORKMOD4_HPP
 #define NETWORKMOD4_HPP
 #include "network.hpp"
-#include "city.hpp"
+
 namespace aerial_network{
     class NetworkMod4:public Network{
         protected:
@@ -9,11 +9,9 @@ namespace aerial_network{
         public:
             NetworkMod4();
             ~NetworkMod4();            
-            /* Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
-            void addCity()override;
+            // Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
+            void addCities()override;
             void place();
-            
-            */
     };
-};
+}
 #endif // NETWORKMOD4_HP

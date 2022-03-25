@@ -9,6 +9,7 @@
 namespace aerial_network{
     class City;
     class Network{
+    protected:
         std::vector<City*> cities;
     public:
         virtual void addCities();
