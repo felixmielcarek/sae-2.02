@@ -11,6 +11,7 @@ namespace aerial_network{
         std::string name;
         City(std::string name);
     public:
+        virtual ~City()=default;
         virtual void initDest(std::vector<City*> cities)=0; 
         std::string getName() const;
         virtual void displayCity()=0;
