@@ -12,9 +12,11 @@ namespace aerial_network{
     protected:
         std::vector<City*> cities;
     public:
+        Network()=default;
+        ~Network();
         virtual void addCities();
         void displayCities();
-        void searchDest();
+        virtual void searchDest();
     };
     
 } // namespace aerial_network

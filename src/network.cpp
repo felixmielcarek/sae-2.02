@@ -5,6 +5,13 @@ using namespace std;
 
 namespace aerial_network{
     //fel
+    Network::~Network(){
+        for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
+            delete *i;
+        }
+    }
+
+    //fel
     void Network::addCities(){
         string tmpName;
         City* c;

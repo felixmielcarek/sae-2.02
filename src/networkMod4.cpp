@@ -4,8 +4,11 @@
 using namespace std;
 
 namespace aerial_network{
-    NetworkMod4::NetworkMod4(){};
-    NetworkMod4::~NetworkMod4(){};
+    NetworkMod4::~NetworkMod4(){
+        for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
+            delete *i;
+        }
+    }
 
     //Aurian Fél
     //Fais correspondre un "TRUE pour chaque villes saisie
