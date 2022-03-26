@@ -8,7 +8,7 @@ namespace aerial_network{
         :City{nom}{}
 
     //fel
-    CityMod1::~CityMod1(){
+    CityMod1::~CityMod1(){ 
         for ( vector<City*>::iterator i = dest.begin(); i != dest.end(); ++i ){
             delete *i;
         }
@@ -62,9 +62,6 @@ namespace aerial_network{
     }
 
     // Axel
-    // CA MARCHE PAS EHEH EN MEME TEMPS IL EST DEJA PRESQUE 00H00 
-    // ET J'ECRIT DE LA GROSSE CHIASSE DONC JE CONTINUERAI PLUS TARD
-    // EN VRAI CA MARCHE PRESQUE
     int CityMod1::searchDest(vector<City*> tmp, City* city, int counter){
         // check si deja passer par cette ville
         for(vector<City*>::iterator it=tmp.begin();it!=tmp.end();it++){
@@ -75,7 +72,7 @@ namespace aerial_network{
         tmp.push_back(this);
         // check si on est arrivé à la dest
         if(this==city){
-            return counter;
+            return 0;
         }
         // appelle récursivement pour chaque destination possible
         for(vector<City*>::iterator it=this->dest.begin();it!=this->dest.end();it++){
@@ -83,8 +80,8 @@ namespace aerial_network{
             if(x==-1){
                 continue;
             }
-            counter=counter+1;
+            counter=x+1;
         }
-        return -1;
+        return counter;
     }
 };// namespace aerial_network

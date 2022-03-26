@@ -82,7 +82,7 @@ namespace aerial_network{
             cout << "Vous êtres déjà sur place inutile de prendre un vole ! :D\n";
         }
         else{
-            int x=c1->searchDest(tmp,c2,1);
+            int x=c1->searchDest(tmp,c2,0);
             if(x==-1){
                 cout << "Il est impossible de se rendre à " << c2->getName() << endl;
             }
