@@ -2,15 +2,17 @@
 #define CITYMOD4_HPP
 
 #include "city.hpp"
+#include "networkMod4.hpp"
 
 //fel
 namespace aerial_network{
     class CityMod4:public City{
         int num;
+        friend class NetworkMod4;
     public:
         CityMod4(std::string name, int num);
         ~CityMod4()=default;
-        void initDest(std::vector<City*> cities)override;
+        void initDest(std::vector<City*> cities,NetworkMod4& nw);
         void displayCity()override;
         int searchDest(std::vector<City*> tmp, City* city, int counter)override;
     };
