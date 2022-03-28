@@ -12,7 +12,7 @@ namespace aerial_network{
         std::vector<City*> dest;
     public:
         CityMod1(std::string nom);
-        ~CityMod1();
+        ~CityMod1()=default;
         void initDest(std::vector<City*> cities);
         void displayCity();
         int searchDest(std::vector<City*> tmp, City* city, int counter);

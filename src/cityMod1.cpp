@@ -7,13 +7,6 @@ namespace aerial_network{
     CityMod1::CityMod1(string nom)
         :City{nom}{}
 
-    //fel
-    CityMod1::~CityMod1(){ 
-        for ( vector<City*>::iterator i = dest.begin(); i != dest.end(); ++i ){
-            delete *i;
-        }
-    }
-
     //Axel
     void CityMod1::initDest(vector<City*> cities){
         for(vector<City *>::iterator it=cities.begin();it!=cities.end();it++){ 

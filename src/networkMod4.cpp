@@ -12,7 +12,7 @@ namespace aerial_network{
     }
 
     //Aurian Fél
-    //Fais correspondre un "TRUE pour chaque villes saisie
+    //Fais correspondre un "TRUE" pour chaque villes saisie
     void NetworkMod4::addCities(){
         string tmpName;
         City* c;

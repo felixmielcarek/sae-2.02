@@ -13,7 +13,6 @@ namespace aerial_network{
         City(std::string name);
     public:
         virtual ~City()=default;
-        //virtual void initDest(std::vector<City*> cities)=0;   //ça sert à rien de faire un classe abstraite parce que les deux filles ont pas la même signature sur initDest
         std::string getName() const;
         virtual void displayCity()=0;
         virtual int searchDest(std::vector<City*> tmp, City* city, int counter)=0;

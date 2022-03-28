@@ -9,9 +9,6 @@ namespace aerial_network{
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;
         }
-        for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
-            delete *i;
-        }
     }
 
     //fel
@@ -80,7 +77,7 @@ namespace aerial_network{
             count=count+1;
         }
         if(c1==c2){
-            cout << "Vous êtres déjà sur place inutile de prendre un vole ! :D\n";
+            cout << "Vous êtes déjà sur place inutile de prendre un vole ! :D\n";
         }
         else{
             int x=c1->searchDest(tmp,c2,0);
