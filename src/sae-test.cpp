@@ -38,12 +38,10 @@ void testDefaultCityMod1(){
     tmp=dynamic_cast<CityMod1*>(c2);
     tmp->pushCity(c1);
     tmp->pushCity(c5);
-    tmp->pushCity(c3);
     tmp=dynamic_cast<CityMod1*>(c3);
     tmp->pushCity(c1);
     tmp=dynamic_cast<CityMod1*>(c4);
     tmp->pushCity(c2);
-    tmp->pushCity(c3);
     tmp=dynamic_cast<CityMod1*>(c5);
     tmp->pushCity(c2);
     tmp->pushCity(c4);
@@ -51,7 +49,6 @@ void testDefaultCityMod1(){
     tmp=dynamic_cast<CityMod1*>(c6);
     tmp->pushCity(c1);
     tmp->pushCity(c2);
-    tmp->pushCity(c3);
     tmp->pushCity(c4);
     tmp->pushCity(c5);
     

@@ -56,7 +56,6 @@ namespace aerial_network{
 
     // Axel
     void CityMod1::searchDest(vector<City*> tmp, City* city, int& counterFix, int counterTmp){
-        cout << "---\n" << this->getName() << "\n---" << endl; 
         // check si deja passer par cette ville
         for(vector<City*>::iterator it=tmp.begin();it!=tmp.end();it++){
             if(*it==this){
@@ -64,7 +63,7 @@ namespace aerial_network{
             }
         }
         tmp.push_back(this);
-        // check si on est arrivé à la dest
+        // check si on est arrivé à la dest et change le compteur
         if(this==city){
             cout << "TROUVE" << endl;
             if(counterTmp<counterFix){
