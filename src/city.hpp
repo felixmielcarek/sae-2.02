@@ -14,7 +14,7 @@ namespace aerial_network{
     public:
         virtual ~City()=default;
         std::string getName() const;
-        virtual int searchDest(std::vector<City*> tmp, City* city, int counter)=0;
+        virtual int searchDest(std::vector<City*> tmp, City* city, int& counterFix, int counterTmp)=0;
     };
 } // namespace aerial_network
 

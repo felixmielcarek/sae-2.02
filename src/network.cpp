@@ -43,9 +43,6 @@ namespace aerial_network{
 
     // Axel
     void Network::searchDest(){
-        
-        // AMERLIORER LE MENU (C'EST DU TEMPORAIRE)
-        // EN VRAI CA PUE LA MERDE COMMENT C'EST FAIT, MAIS DITES LE PAS HEIN
         cout << "De quelle ville partez vous ?\n";
         int count=1;
         for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
@@ -54,7 +51,6 @@ namespace aerial_network{
         }
         int choix;
         cin >> choix;
-        
         cout << "Dans quelle ville allez vous ?\n";
         count=1;
         for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
@@ -63,7 +59,6 @@ namespace aerial_network{
         }
         int choix1;
         cin >> choix1;
-        
         vector<City*> tmp;
         count=1;
         City* c1;
@@ -81,7 +76,8 @@ namespace aerial_network{
             cout << "Vous êtes déjà sur place inutile de prendre un vole ! :D\n";
         }
         else{
-            int x=c1->searchDest(tmp,c2,0);
+            int x=0;
+            c1->searchDest(tmp,c2,x,0);
             if(x==-1){
                 cout << "Il est impossible de se rendre à " << c2->getName() << endl;
             }
