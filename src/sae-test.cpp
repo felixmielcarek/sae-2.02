@@ -13,6 +13,12 @@
 using namespace std;
 using namespace aerial_network;
 
+//Axel
+void testDefaultCityMod1(){
+    Network nwDefault;
+    // ajouter les villes, les affichers et cherche le chemin.
+}
+
 // Axel
 int main(){
     string flag;
@@ -34,7 +40,7 @@ int main(){
         }
         else if(choice == "1"){
             cout << CLEAR CYN "\n----- Bienvenue dans la réseau par défaut -----" NC << endl;
-            cout << "RESEAU PAR DEFAULT" << endl;
+            testDefaultCityMod1();
             cout << "(Appuyer sur Entrer pour continuer)\n";
             system("read"); // pas ouff -> mais marche bien
             cout << CLEAR;
