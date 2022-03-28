@@ -32,7 +32,7 @@ namespace aerial_network{
         return;
     }
 
-    int CityMod4::searchDest(vector<City*> tmp, City* city, int counter){
+    int CityMod4::searchDest(vector<City*> tmp, City* city, int& counterFix, int counterTmp){
         return 0;
     }
 } // aerial_network
