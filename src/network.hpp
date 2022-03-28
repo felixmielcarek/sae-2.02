@@ -15,7 +15,7 @@ namespace aerial_network{
         Network()=default;
         ~Network();
         virtual void addCities();
-        void displayCities();
+        virtual void displayCities();
         virtual void searchDest();
     };
     

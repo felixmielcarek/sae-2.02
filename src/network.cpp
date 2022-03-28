@@ -36,7 +36,8 @@ namespace aerial_network{
     // Axel
     void Network::displayCities(){
         for(vector<City*>::iterator it=cities.begin(); it!=cities.end();it++){
-            (*it)->displayCity();
+            CityMod1* tmpPtr=dynamic_cast<CityMod1*>(*it);
+            tmpPtr->displayCity();
         }
     }
 

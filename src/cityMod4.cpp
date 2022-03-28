@@ -32,10 +32,6 @@ namespace aerial_network{
         return;
     }
 
-    void CityMod4::displayCity(){
-        return;
-    }
-
     int CityMod4::searchDest(vector<City*> tmp, City* city, int counter){
         return 0;
     }

@@ -39,6 +39,11 @@ namespace aerial_network{
             tmpPtr->initDest(cities,this);
         }
     }
+    
+    void NetworkMod4::displayCities(){
+        return;
+    }
+    
     //Parcours la listes des villes et retournes sont placement (utiliser pour le vector Villes)
     // Aurian
     void NetworkMod4::place(){

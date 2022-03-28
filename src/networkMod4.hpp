@@ -9,6 +9,7 @@ namespace aerial_network{
             ~NetworkMod4();
             std::vector<std::vector<bool>> matrix;
             // Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
+            void displayCities()override;
             void addCities()override;
             void place();
     };
