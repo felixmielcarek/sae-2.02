@@ -21,7 +21,7 @@ namespace aerial_network{
         cin >> tmpName;
 
         while(tmpName != "-1"){
-            c = new CityMod4{tmpName,(int)cities.size()};
+            c = new CityMod4{tmpName,static_cast<int>(cities.size())};
             cities.push_back(c);
             cout << "Entrez '-1' si vous ne souhaitez pas rajouter de ville," << endl;
             cout << "ou tapez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
@@ -35,7 +35,8 @@ namespace aerial_network{
         }
 
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
-            (*it)->initDest(cities);
+            CityMod4* tmpPtr=dynamic_cast<CityMod4*>(*it);
+            tmpPtr->initDest(cities,this);
         }
     }
     //Parcours la listes des villes et retournes sont placement (utiliser pour le vector Villes)

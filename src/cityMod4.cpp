@@ -6,8 +6,8 @@ namespace aerial_network{
     CityMod4::CityMod4(string name, int num)
         :City{name},num{num}{}
 
-    
-    void CityMod4::initDest(vector<City*> cities,NetworkMod4& nw){
+    //fel
+    void CityMod4::initDest(vector<City*> cities,NetworkMod4* nw){
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
             if(this==(*it)){continue;}
 
@@ -20,7 +20,8 @@ namespace aerial_network{
                     continue;
                 }
                 if(choix=="O" || choix=="o"){
-                    nw.matrix[num][(*it)->num]=true;
+                    CityMod4* tmpPtr=dynamic_cast<CityMod4*>(*it);
+                    nw->matrix[num][tmpPtr->num]=true;
                     break;
                 }
                 if(choix=="N" || choix=="n"){

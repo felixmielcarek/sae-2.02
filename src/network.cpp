@@ -31,7 +31,8 @@ namespace aerial_network{
         }
 
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
-            (*it)->initDest(cities);
+            CityMod1* tmpPtr=dynamic_cast<CityMod1*>(*it);
+            tmpPtr->initDest(cities);
         }
     }
     
