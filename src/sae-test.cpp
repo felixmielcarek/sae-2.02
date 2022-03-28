@@ -2,6 +2,7 @@
 #include <string>
 #include "network.hpp"
 #include "cityMod1.hpp"
+#include "cityMod4.hpp"
 #include "city.hpp"
 
 //code couleur

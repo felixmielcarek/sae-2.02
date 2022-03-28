@@ -44,7 +44,7 @@ namespace aerial_network{
         string empty;
         empty.resize(10,' ');
         cout << "\t" << empty << "\t";
-        for(int i=0;i<matrix.size();i++){
+        for(int i=0;i<static_cast<int>(matrix.size());i++){
             string tmpStr=cities[i]->getName();
             tmpStr.resize(10,' ');
             cout << "|\t" << tmpStr << "\t";
