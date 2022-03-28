@@ -15,7 +15,7 @@ namespace aerial_network{
         ~CityMod1()=default;
         void initDest(std::vector<City*> cities);
         void displayCity();
-        int searchDest(std::vector<City*> tmp, City* city, int& counterFix, int counterTmp);
+        void searchDest(std::vector<City*> tmp, City* city, int& counterFix, int counterTmp);
         void pushCity(City* c);
         friend bool operator==(const City& c1, const City& c2);
     };
