@@ -41,7 +41,14 @@ namespace aerial_network{
     }
     
     void NetworkMod4::displayCities(){
-        return;
+        string empty;
+        empty.resize(10,' ');
+        cout << "\t" << empty << "\t";
+        for(int i=0;i<matrix.size();i++){
+            string tmpStr=cities[i]->getName();
+            tmpStr.resize(10,' ');
+            cout << "|\t" << tmpStr << "\t";
+        }
     }
     
     //Parcours la listes des villes et retournes sont placement (utiliser pour le vector Villes)
