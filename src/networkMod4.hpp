@@ -4,6 +4,7 @@
 
 namespace aerial_network{
     class NetworkMod4:public Network{
+        friend class CityMod4;
         public:
             NetworkMod4()=default;
             ~NetworkMod4();

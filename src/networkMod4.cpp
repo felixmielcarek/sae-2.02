@@ -28,26 +28,82 @@ namespace aerial_network{
             cin >> tmpName;
         }
 
-        int cs = (int) cities.size();
+        int cs = static_cast<int>(cities.size());
         for(int i=0; i<cs;i++){
-            vector<bool> tmpV (false,cs);
+            vector<bool> tmpV;
+            tmpV.resize(cs);
+            for(int y=0 ; y<cs ; y++){
+                tmpV[y]=false;
+            }
             matrix.push_back(tmpV);
         }
 
         for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
             CityMod4* tmpPtr=dynamic_cast<CityMod4*>(*it);
-            tmpPtr->initDest(cities,this);
+            tmpPtr->initDest(this);
         }
     }
     
+    //fel
     void NetworkMod4::displayCities(){
         string empty;
         empty.resize(10,' ');
+        int floor=1;
         cout << "\t" << empty << "\t";
-        for(int i=0;i<static_cast<int>(matrix.size());i++){
-            string tmpStr=cities[i]->getName();
-            tmpStr.resize(10,' ');
-            cout << "|\t" << tmpStr << "\t";
+
+        for(int i=0 ; i<static_cast<int>(matrix.size()) ; i++){
+
+            if(floor==1 || floor==3){
+                cout << "|\t" << empty << "\t";
+                if(i == static_cast<int>(matrix.size())-1){
+                    floor++;
+                    i=0;
+                    cout << endl << "\t" << empty << "\t";
+                }
+            }
+            else if(floor==2){
+                string tmpStr=cities[i]->getName();
+                tmpStr.resize(10,' ');
+                cout << "|\t" << tmpStr << "\t";
+                if(i == static_cast<int>(matrix.size())-1){
+                    floor++;
+                    i=0;
+                    cout << endl;
+                    cout << endl << "\t" << empty << "\t";
+                }
+            }
+        }
+
+        floor=1;
+
+        for(int ii=0;ii<static_cast<int>(matrix.size());ii++){
+            
+            if(floor==1 || floor==3){
+                cout << "|\t" << empty << "\t";
+                if(ii == static_cast<int>(matrix.size())-1){
+                    floor++;
+                    ii=0;
+                    cout << endl << "\t" << empty << "\t";
+                }
+            }
+
+            else if(floor==2){
+                string tmpStr=cities[ii]->getName();
+                tmpStr.resize(10,' ');
+                cout << "\t" << tmpStr << "\t";
+                
+                for(int y=0 ; y < static_cast<int>(matrix.size()) ; y++){
+                    string tmpBool=to_string(matrix[ii][y]);
+                    tmpBool.resize(10,' ');
+                    cout << "|\t" << tmpBool << "\t";
+                }
+                if(ii == static_cast<int>(matrix.size())-1){
+                    floor++;
+                    ii=0;
+                    cout << endl;
+                    cout << endl << "\t" << empty << "\t";
+                }
+            }
         }
     }
     
