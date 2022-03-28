@@ -77,4 +77,9 @@ namespace aerial_network{
         }
         return counter;
     }
+
+    //Axel
+    void CityMod1::pushCity(City* c){
+        dest.push_back(c);
+    }
 };// namespace aerial_network

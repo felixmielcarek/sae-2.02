@@ -17,6 +17,7 @@ namespace aerial_network{
         virtual void addCities();
         virtual void displayCities();
         virtual void searchDest();
+        virtual void pushCities(City* c);
     };
     
 } // namespace aerial_network

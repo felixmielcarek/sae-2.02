@@ -90,4 +90,9 @@ namespace aerial_network{
             }
         }
     }
+
+    //Axel
+    void Network::pushCities(City* c){
+        cities.push_back(c);
+    }
 }
