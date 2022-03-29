@@ -98,23 +98,6 @@ void menuCityMod1(){
     }
 }
 
-//Axel
-NetworkMod4 testDefaultCityMod4(){
-    NetworkMod4 nw4Default;
-    nw4Default.pushCities(new CityMod4{"Lyon",0});
-    nw4Default.pushCities(new CityMod4{"Clermont-Ferrand",1});
-    nw4Default.pushCities(new CityMod4{"Castres",2});
-    nw4Default.pushCities(new CityMod4{"Albi",3});
-    nw4Default.pushCities(new CityMod4{"Perpignan",4});
-    nw4Default.pushCities(new CityMod4{"Paris",5});
-
-    nw4Default.defaultMatrix();
-    
-    cout <<endl;
-    //nw4Default.searchDest();
-    return nw4Default;
-}
-
 //fel
 void menuCityMod4(){
     cout << CLEAR;
@@ -136,7 +119,7 @@ void menuCityMod4(){
         }
         else if(choice == "1"){
             cout << CLEAR CYN "\n----- Bienvenue dans la réseau par défaut -----" NC << endl;
-            nw=testDefaultCityMod4();
+            nw.defaultCityMod4();
             cout << CLEAR;
         }
         else if(choice == "2"){

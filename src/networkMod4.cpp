@@ -13,7 +13,6 @@ namespace aerial_network{
     }
 
     //Aurian Fél
-    //Fais correspondre un "TRUE" pour chaque villes saisie
     void NetworkMod4::addCities(){
         string tmpName;
         City* c;
@@ -44,71 +43,16 @@ namespace aerial_network{
             tmpPtr->initDest(this);
         }
     }
-    
+
     //fel
-    void NetworkMod4::displayCities(){
-        string empty;
-        empty.resize(10,' ');
+    void NetworkMod4::defaultCityMod4(){
+        cities.push_back(new CityMod4{"Lyon",0});
+        cities.push_back(new CityMod4{"Clermont-Ferrand",1});
+        cities.push_back(new CityMod4{"Castres",2});
+        cities.push_back(new CityMod4{"Albi",3});
+        cities.push_back(new CityMod4{"Perpignan",4});
+        cities.push_back(new CityMod4{"Paris",5});
 
-        cout << "\\__________     Arrivé  " ;
-        tabEmptyDisplay();
-
-        cout << "           \\___________ ";
-        for(int i = 0 ; i < static_cast<int>(matrix.size()) ; i++){
-            string tmpStr=cities[i]->getName();
-            tmpStr.resize(10,' ');
-            cout << "|\t" << tmpStr << "\t";
-        }
-
-        cout << endl << "   Départ              \\";
-        tabEmptyDisplay();
-
-        for(int i=0;i<static_cast<int>(matrix.size());i++){
-            string tmpStr=cities[i]->getName();
-            tmpStr.resize(10,' ');
-
-            for (int ii = 0; ii < static_cast<int>(matrix.size())+1; ii++){
-                cout << "-------------------------" ;
-            }            
-            cout << endl << "\t" << empty << "\t";
-
-            tabEmptyDisplay();
-
-            cout << "\t" << tmpStr << "\t";
-                
-            for(int y=0 ; y < static_cast<int>(matrix.size()) ; y++){
-                string res;
-                if(matrix[i][y]){
-                    res="Accessible";
-                }
-                else{
-                    res=" ";
-                }
-                res.resize(10,' ');
-                
-                cout << "|\t" << res << "\t";
-            }
-            cout << endl << "\t" << empty << "\t";
-            tabEmptyDisplay();
-        }
-    }
-    
-    //fel
-    void NetworkMod4::tabEmptyDisplay(){
-        string empty;
-        empty.resize(10,' ');
-
-        for(int i=0 ; i<static_cast<int>(cities.size()) ; i++){
-            cout << "|\t" << empty << "\t";
-        }
-        cout << endl;
-    }
-
-    void NetworkMod4::pushCities(City* c){
-        cities.push_back(c);
-    }
-
-    void NetworkMod4::defaultMatrix(){
         int cs = static_cast<int>(cities.size());
 
         for(int i=0; i<cs;i++){
@@ -135,5 +79,61 @@ namespace aerial_network{
         matrix[5][1]=true;
         matrix[5][2]=true;
         matrix[5][4]=true;
+        
+        cout <<endl;
+    }
+    
+    //fel
+    void NetworkMod4::displayCities(){
+        string empty;
+        empty.resize(10,' ');
+        string tabEmptyDisplay;
+
+        for(int i=0 ; i<static_cast<int>(cities.size()) ; i++){
+            tabEmptyDisplay+="|\t"+empty+"\t";
+        }
+        tabEmptyDisplay+="\n";
+
+        cout << "\\__________     Arrivé  " ;
+        cout << tabEmptyDisplay;
+
+        cout << "           \\___________ ";
+        for(int i = 0 ; i < static_cast<int>(matrix.size()) ; i++){
+            string tmpStr=cities[i]->getName();
+            tmpStr.resize(10,' ');
+            cout << "|\t" << tmpStr << "\t";
+        }
+
+        cout << endl << "   Départ              \\";
+        cout << tabEmptyDisplay;
+
+        for(int i=0;i<static_cast<int>(matrix.size());i++){
+            string tmpStr=cities[i]->getName();
+            tmpStr.resize(10,' ');
+
+            for (int ii = 0; ii < static_cast<int>(matrix.size())+1; ii++){
+                cout << "-------------------------" ;
+            }            
+            cout << endl << "\t" << empty << "\t";
+
+            cout << tabEmptyDisplay;
+
+            cout << "\t" << tmpStr << "\t";
+                
+            for(int y=0 ; y < static_cast<int>(matrix.size()) ; y++){
+                string res;
+                if(matrix[i][y]){
+                    res="Accessible";
+                }
+                else{
+                    res=" ";
+                }
+                res.resize(10,' ');
+                
+                cout << "|\t" << res << "\t";
+            }
+            cout << endl << "\t" << empty << "\t";
+            cout << tabEmptyDisplay;
+        }
     }
 }
