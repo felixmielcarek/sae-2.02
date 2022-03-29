@@ -98,12 +98,35 @@ void menuCityMod1(){
     }
 }
 
+//Axel
+void testDefaultCityMod4(){
+    NetworkMod4 nw4Default;
+    City* c1 = new CityMod4{"Clermont-Ferrand",1};
+    City* c2 = new CityMod4{"Castres",2};
+    City* c3 = new CityMod4{"Albi",3};
+    City* c4 = new CityMod4{"Perpignan",4};
+    City* c5 = new CityMod4{"Paris",5};
+    City* c6 = new CityMod4{"Lyon",6};
+    nw4Default.pushCities(c1);
+    nw4Default.pushCities(c2);
+    nw4Default.pushCities(c3);
+    nw4Default.pushCities(c4);
+    nw4Default.pushCities(c5);
+    nw4Default.pushCities(c6);
+
+    // creer la matrice
+    
+    nw4Default.displayCities();
+    cout <<endl;
+    //nw4Default.searchDest();
+}
+
 //fel
 void menuCityMod4(){
     cout << CLEAR;
     while(true){
         string choice;
-        cout << YEL "\n===== Menu Réseau (modèle liste (4)) =====" NC <<endl;
+        cout << YEL "\n===== Menu Réseau (modèle matrice (4)) =====" NC <<endl;
         cout << "1. Utiliser le réseau par défaut" << endl;
         cout << "2. Créer son propre réseau" << endl;
         cout << "Donner votre choix (q pour quitter) :";
@@ -118,6 +141,10 @@ void menuCityMod4(){
         }
         else if(choice == "1"){
             cout << CLEAR CYN "\n----- Bienvenue dans la réseau par défaut -----" NC << endl;
+            testDefaultCityMod4();
+            cout << "(Appuyer sur Entrer pour continuer)\n";
+            system("read"); // pas ouff -> mais marche bien
+            cout << CLEAR;
         }
         else if(choice == "2"){
             cout << CYN "\n----- Bienvenue dans l'outil de création de réseau -----" NC << endl;
@@ -158,10 +185,6 @@ int main(){
         }
         else if(choice == "2"){
             menuCityMod4();
-            cout << "MATRICE" << endl; 
-            cout << "(Appuyer sur Entrer pour continuer)\n";
-            system("read");
-            cout << CLEAR;
         }
     }
 }

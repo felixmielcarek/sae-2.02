@@ -104,4 +104,8 @@ namespace aerial_network{
         cout << endl;
     }
 
+    void NetworkMod4::pushCities(City* c){
+        cities.push_back(c);
+    }
+
 }
