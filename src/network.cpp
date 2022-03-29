@@ -74,7 +74,7 @@ namespace aerial_network{
             count=count+1;
         }
         if(c1==c2){
-            cout << "Vous êtes déjà sur place inutile de prendre un vole ! :D\n";
+        cout << "Vous êtes déjà sur place inutile de prendre un vol ! :D\n";
         }
         else{
             int x=999;

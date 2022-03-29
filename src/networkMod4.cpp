@@ -12,7 +12,7 @@ namespace aerial_network{
         cities.clear();
     }
 
-    //Aurian Fél
+    //fel
     void NetworkMod4::addCities(){
         string tmpName;
         City* c;
@@ -83,6 +83,43 @@ namespace aerial_network{
         cout <<endl;
     }
     
+    //fel
+    void NetworkMod4::searchDest(){
+        cout << "De quelle ville partez vous ?\n";
+        int count=1;
+        for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
+            cout << count << "- " << (*it)->getName() << endl;
+            count=count+1;
+        }
+        int start;
+        cin >> start;
+
+        cout << "Dans quelle ville allez vous ?\n";
+        count=1;
+        for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
+
+            cout << count << "- " << (*it)->getName() << endl;
+            count=count+1;
+        }
+        int end;
+        cin >> end;
+
+        vector<int> path;
+        int steps = matrixPath(start-1,end-1,path);
+    }
+
+    //fel
+    int NetworkMod4::matrixPath(int a , int b,vector<int> path){
+        for(int i=0 ; i<static_cast<int>(matrix.size()) ; i++){
+            if(i)
+            if(matrix[a][b] == true){
+                
+                return 1;
+            }
+        }
+
+    }
+
     //fel
     void NetworkMod4::displayCities(){
         string empty;
