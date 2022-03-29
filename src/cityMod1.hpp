@@ -1,3 +1,9 @@
+/**
+ *\file cityMod1.hpp
+ *\brief déclaration de la classe City (selon le modèle 1, en liste), ainsi que la déclaration de ses méthodes
+ *\author DE LA FUENTE Axel
+ */
+
 #ifndef CITYMOD1_HPP
 #define CITYMOD1_HPP
 

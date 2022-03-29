@@ -1,13 +1,26 @@
+/**
+ *\file cityMod1.cpp
+ *\brief code des méthodes de la classe CityMod1 
+ */
+
 #include "cityMod1.hpp"
 
 using namespace std;
 
 namespace aerial_network{
-    //Axel
+    /**
+     *\brief constructeur de CityMod1
+     *\param nom nom que l'on souhaiter donner a la ville
+     *\author DE LA FUENTE Axel
+     */
     CityMod1::CityMod1(string nom)
         :City{nom}{}
 
-    //Axel
+    /**
+     *\brief fonction intéractive permettant de remplir le vector des destinations directe accessible depuis la ville appellé avec cette méthode
+     *\param cities vector contenant toute les villes du réseau (possibilité de destination)
+     *\author DE LA FUENTE Axel
+     */
     void CityMod1::initDest(vector<City*> cities){
         for(vector<City *>::iterator it=cities.begin();it!=cities.end();it++){ 
             if (this==(*it)){
@@ -32,12 +45,21 @@ namespace aerial_network{
         }
     }
 
-    // Axel
+    /**
+     *\brief surchage de l'opérateur "==" entre deux CityMod1
+     *\param c1 première ville à comparer
+     *\param c2 deuxième ville à comparer
+     *\return un booléen, pour savoir si l'égalité est vrai ou fausse
+     *\author DE LA FUENTE Axel
+     */
     bool operator==(const City& c1, const City& c2){
         return c1.getName()==c2.getName();
     }
     
-    // Axel
+    /**
+     *\brief fonction d'affichage de la CityMod1 appellé avec toute ses destination possible
+     *\author DE LA FUENTE Axel
+     */
     void CityMod1::displayCity(){
         cout << this->name << " {";
         vector<City*>::iterator it=dest.begin();
@@ -54,7 +76,14 @@ namespace aerial_network{
         cout << "}\n";
     }
 
-    // Axel
+    /**
+     *\brief fonction récursive de recherche du trajet le plus court entre deux CityMod1
+     *\param tmp est un vector (vide de base) dans lequel chaque ville déjà parcourus est rentrer afin d'éviter de refaire plusieurs fois le même chemin
+     *\param city est la CityMod1 que l'utilsateur souhaite atteindre en un minimu de vol
+     *\param counterFix est la référence vers le compteur qui garde le trajet le plus court.
+     *\param counterTmp est le compteur temporaire qui calcul le nombre de vol nécessaire pour chacun des trajets possible dans le réseau
+     *\author DE LA FUENTE Axel
+     */
     void CityMod1::searchDest(vector<City*> tmp, City* city, int& counterFix, int counterTmp){
         //cout << "\n---\n" << this->getName() << "\n---" << endl;
         // check si deja passer par cette ville
@@ -81,7 +110,11 @@ namespace aerial_network{
         return;
     }
 
-    //Axel
+    /**
+     *\brief setter pour le vector dest de la CityMod1 appellé
+     *\param c ville ajouter au vector dest
+     *\author DE LA FUENTE Axel
+     */
     void CityMod1::pushCity(City* c){
         dest.push_back(c);
     }
