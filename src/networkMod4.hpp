@@ -11,6 +11,7 @@ namespace aerial_network{
             std::vector<std::vector<bool>> matrix;
             // Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
             void displayCities()override;
+            void tabEmptyDisplay();
             void addCities()override;
             void place();
     };

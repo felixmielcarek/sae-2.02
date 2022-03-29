@@ -48,65 +48,60 @@ namespace aerial_network{
     void NetworkMod4::displayCities(){
         string empty;
         empty.resize(10,' ');
-        int floor=1;
-        cout << "\t" << empty << "\t";
 
-        for(int i=0 ; i<static_cast<int>(matrix.size()) ; i++){
+        cout << "\\__________     Arrivé  " ;
+        tabEmptyDisplay();
 
-            if(floor==1 || floor==3){
-                cout << "|\t" << empty << "\t";
-                if(i == static_cast<int>(matrix.size())-1){
-                    floor++;
-                    i=0;
-                    cout << endl << "\t" << empty << "\t";
-                }
-            }
-            else if(floor==2){
-                string tmpStr=cities[i]->getName();
-                tmpStr.resize(10,' ');
-                cout << "|\t" << tmpStr << "\t";
-                if(i == static_cast<int>(matrix.size())-1){
-                    floor++;
-                    i=0;
-                    cout << endl;
-                    cout << endl << "\t" << empty << "\t";
-                }
-            }
+        cout << "           \\___________ ";
+        for(int i = 0 ; i < static_cast<int>(matrix.size()) ; i++){
+            string tmpStr=cities[i]->getName();
+            tmpStr.resize(10,' ');
+            cout << "|\t" << tmpStr << "\t";
         }
 
-        floor=1;
+        cout << endl << "   Départ              \\";
+        tabEmptyDisplay();
 
-        for(int ii=0;ii<static_cast<int>(matrix.size());ii++){
-            
-            if(floor==1 || floor==3){
-                cout << "|\t" << empty << "\t";
-                if(ii == static_cast<int>(matrix.size())-1){
-                    floor++;
-                    ii=0;
-                    cout << endl << "\t" << empty << "\t";
-                }
-            }
+        for(int i=0;i<static_cast<int>(matrix.size());i++){
+            string tmpStr=cities[i]->getName();
+            tmpStr.resize(10,' ');
 
-            else if(floor==2){
-                string tmpStr=cities[ii]->getName();
-                tmpStr.resize(10,' ');
-                cout << "\t" << tmpStr << "\t";
+            for (int ii = 0; ii < static_cast<int>(matrix.size())+1; ii++){
+                cout << "-------------------------" ;
+            }            
+            cout << endl << "\t" << empty << "\t";
+
+            tabEmptyDisplay();
+
+            cout << "\t" << tmpStr << "\t";
                 
-                for(int y=0 ; y < static_cast<int>(matrix.size()) ; y++){
-                    string tmpBool=to_string(matrix[ii][y]);
-                    tmpBool.resize(10,' ');
-                    cout << "|\t" << tmpBool << "\t";
+            for(int y=0 ; y < static_cast<int>(matrix.size()) ; y++){
+                string res;
+                if(matrix[i][y]){
+                    res="Accessible";
                 }
-                if(ii == static_cast<int>(matrix.size())-1){
-                    floor++;
-                    ii=0;
-                    cout << endl;
-                    cout << endl << "\t" << empty << "\t";
+                else{
+                    res=" ";
                 }
+                res.resize(10,' ');
+                
+                cout << "|\t" << res << "\t";
             }
+            cout << endl << "\t" << empty << "\t";
+            tabEmptyDisplay();
         }
     }
     
+    void NetworkMod4::tabEmptyDisplay(){
+        string empty;
+        empty.resize(10,' ');
+
+        for(int i=0 ; i<static_cast<int>(cities.size()) ; i++){
+            cout << "|\t" << empty << "\t";
+        }
+        cout << endl;
+    }
+
     //Parcours la listes des villes et retournes sont placement (utiliser pour le vector Villes)
     // Aurian
     void NetworkMod4::place(){
