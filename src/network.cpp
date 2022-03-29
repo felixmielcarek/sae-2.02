@@ -9,6 +9,7 @@ namespace aerial_network{
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;
         }
+        cities.clear();
     }
 
     //fel

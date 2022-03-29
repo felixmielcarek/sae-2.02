@@ -9,6 +9,7 @@ namespace aerial_network{
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;
         }
+        cities.clear();
     }
 
     //Aurian Fél
@@ -24,7 +25,7 @@ namespace aerial_network{
             c = new CityMod4{tmpName,static_cast<int>(cities.size())};
             cities.push_back(c);
             cout << "Entrez '-1' si vous ne souhaitez pas rajouter de ville," << endl;
-            cout << "ou tapez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
+            cout << "ou tapez le nom de la ville numéro "<< (cities.size()+1) << " : ";
             cin >> tmpName;
         }
 
@@ -92,6 +93,7 @@ namespace aerial_network{
         }
     }
     
+    //fel
     void NetworkMod4::tabEmptyDisplay(){
         string empty;
         empty.resize(10,' ');
@@ -102,11 +104,4 @@ namespace aerial_network{
         cout << endl;
     }
 
-    //Parcours la listes des villes et retournes sont placement (utiliser pour le vector Villes)
-    // Aurian
-    void NetworkMod4::place(){
-        for(std::vector<City*>::iterator it=cities.begin();it!=cities.end();++it){
-
-        }
-    }
 }

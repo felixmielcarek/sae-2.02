@@ -101,9 +101,9 @@ void menuCityMod1(){
 //fel
 void menuCityMod4(){
     cout << CLEAR;
-    while(1){
+    while(true){
         string choice;
-        cout << YEL "\n===== Menu Réseau (modèle liste (1)) =====" NC <<endl;
+        cout << YEL "\n===== Menu Réseau (modèle liste (4)) =====" NC <<endl;
         cout << "1. Utiliser le réseau par défaut" << endl;
         cout << "2. Créer son propre réseau" << endl;
         cout << "Donner votre choix (q pour quitter) :";
