@@ -108,4 +108,32 @@ namespace aerial_network{
         cities.push_back(c);
     }
 
+    void NetworkMod4::defaultMatrix(){
+        int cs = static_cast<int>(cities.size());
+
+        for(int i=0; i<cs;i++){
+            vector<bool> tmpV;
+            tmpV.resize(cs);
+            for(int y=0 ; y<cs ; y++){
+                tmpV[y]=false;
+            }
+            matrix.push_back(tmpV);
+        }
+        
+        matrix[0][4]=true;
+        matrix[0][5]=true;
+        matrix[1][0]=true;
+        matrix[1][4]=true;
+        matrix[1][5]=true;
+        matrix[2][0]=true;
+        matrix[2][5]=true;
+        matrix[3][1]=true;
+        matrix[3][4]=true;
+        matrix[4][3]=true;
+        matrix[4][5]=true;
+        matrix[5][0]=true;
+        matrix[5][1]=true;
+        matrix[5][2]=true;
+        matrix[5][4]=true;
+    }
 }

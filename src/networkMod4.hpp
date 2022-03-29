@@ -14,6 +14,7 @@ namespace aerial_network{
             void tabEmptyDisplay();
             void addCities()override;
             void pushCities(City* c)override;
+            void defaultMatrix();
     };
 }
 #endif // NETWORKMOD4_HP
