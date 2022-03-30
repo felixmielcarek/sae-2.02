@@ -78,7 +78,8 @@ namespace aerial_network{
         }
         else{
             int x=999;
-            c1->searchDest(tmp,c2,x,0);
+            CityMod1* tmpC1=dynamic_cast<CityMod1*>(c1);
+            tmpC1->searchDest(tmp,c2,x,0);
             if(x==999){
                 cout << "Il est impossible de se rendre à " << c2->getName() << " depuis " << c1->getName() << endl;
             }

@@ -111,9 +111,8 @@ namespace aerial_network{
     //fel
     int NetworkMod4::matrixPath(int a , int b,vector<int> path){
         for(int i=0 ; i<static_cast<int>(matrix.size()) ; i++){
-            if(i)
-            if(matrix[a][b] == true){
-                
+            if(matrix[a][b] == true){ 
+                path.push_back(a);
                 return 1;
             }
         }

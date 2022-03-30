@@ -12,7 +12,7 @@ namespace aerial_network{
         CityMod4(std::string name, int num);
         ~CityMod4()=default;
         void initDest(NetworkMod4* nw);
-        void searchDest(std::vector<City*> tmp, City* city, int& counterFix, int counterTmp)override;
+        int getNum();
     };
 }
 

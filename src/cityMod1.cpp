@@ -105,7 +105,8 @@ namespace aerial_network{
         // appelle récursivement pour chaque destination possible
         counterTmp=counterTmp+1;
         for(vector<City*>::iterator it=dest.begin(); it!=dest.end();it++){
-            (*it)->searchDest(tmp,city,counterFix,counterTmp);
+            CityMod1* tmpCity=dynamic_cast<CityMod1*>(*it);
+            tmpCity->searchDest(tmp,city,counterFix,counterTmp);
         }
         return;
     }
