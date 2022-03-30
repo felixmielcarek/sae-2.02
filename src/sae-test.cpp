@@ -129,7 +129,7 @@ void menuCityMod4(){
         cout << CLEAR CYN "---- Réseau ----" NC << endl;
         nw.displayCities();
         cout << endl;
-        //nw.searchDest();
+        nw.searchDest();
         cout << "(Appuyer sur Entrer pour continuer)\n";
         system("read");
         cout << CLEAR;

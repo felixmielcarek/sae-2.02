@@ -5,7 +5,7 @@
 namespace aerial_network{
     class NetworkMod4:public Network{
             friend class CityMod4;
-            int matrixPath(int a, int b, std::vector<int> path);
+            int matrixPath(int a, int b, std::vector<int> path, int* steps);
         public:
             NetworkMod4()=default;
             ~NetworkMod4();
