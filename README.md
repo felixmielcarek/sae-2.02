@@ -6,6 +6,10 @@ Accessibilité dans un réseau aérien :
 
 Cette SAE à été réaliser par : MIELCAREK Félix, JAULT Aurian et DE LA FUENTE Axel
 
+### Informations importantes :
+
+Si la résolution de votre écran est trop petite (souvent sur les ordinateurs portables), il est possible qu'il y'ai des bugs d'affichage avec les matrices. Pour résoudre ce problème il faut réduire la taille de la police de son terminal ('Ctrl -').
+
 ### Utilisation : 
 
 Un make file est livré avec le code, il est excécutable grâce à la commande :
