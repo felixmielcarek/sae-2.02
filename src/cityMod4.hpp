@@ -8,12 +8,11 @@
 namespace aerial_network{
     class CityMod4:public City{
         int num;
-        friend class NetworkMod4;
     public:
         CityMod4(std::string name, int num);
         ~CityMod4()=default;
-        void initDest(std::vector<City*> cities,NetworkMod4* nw);
-        void searchDest(std::vector<City*> tmp, City* city, int& counterFix, int counterTmp)override;
+        void initDest(NetworkMod4* nw);
+        int getNum();
     };
 }
 

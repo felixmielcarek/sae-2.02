@@ -98,6 +98,44 @@ void menuCityMod1(){
     }
 }
 
+//fel
+void menuCityMod4(){
+    cout << CLEAR;
+    while(true){
+        string choice;
+        NetworkMod4 nw;
+        cout << YEL "\n===== Menu Réseau (modèle matrice (4)) =====" NC <<endl;
+        cout << "1. Utiliser le réseau par défaut" << endl;
+        cout << "2. Créer son propre réseau" << endl;
+        cout << "Donner votre choix (q pour quitter) :";
+        cin >> choice;
+        if(choice!="q" && choice!="Q" && choice!="1" && choice!="2"){
+            cout << CLEAR REDB "Veuillez rentrer une valeur valide" NC << endl;
+            continue;
+        }
+        else if(choice == "q" || choice == "Q"){
+            cout << CLEAR;
+            return;
+        }
+        else if(choice == "1"){
+            cout << CLEAR CYN "\n----- Bienvenue dans la réseau par défaut -----" NC << endl;
+            nw.defaultCityMod4();
+            cout << CLEAR;
+        }
+        else if(choice == "2"){
+            cout << CYN "\n----- Bienvenue dans l'outil de création de réseau -----" NC << endl;
+            nw.addCities();
+        }
+        cout << CLEAR CYN "---- Réseau ----" NC << endl;
+        nw.displayCities();
+        cout << endl;
+        nw.searchDest();
+        cout << "(Appuyer sur Entrer pour continuer)\n";
+        system("read");
+        cout << CLEAR;
+    }
+}
+
 // Axel
 int main(){
     string flag;
@@ -121,10 +159,7 @@ int main(){
             menuCityMod1(); 
         }
         else if(choice == "2"){
-            cout << "MATRICE" << endl; 
-            cout << "(Appuyer sur Entrer pour continuer)\n";
-            system("read");
-            cout << CLEAR;
+            menuCityMod4();
         }
     }
 }

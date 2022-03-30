@@ -7,12 +7,12 @@ namespace aerial_network{
         :City{name},num{num}{}
 
     //fel
-    void CityMod4::initDest(vector<City*> cities,NetworkMod4* nw){
-        for(vector<City*>::iterator it=cities.begin();it!=cities.end();it++){
-            if(this==(*it)){continue;}
+    void CityMod4::initDest(NetworkMod4* nw){
+        for(vector<City*>::iterator it=nw->cities.begin() ; it!=nw->cities.end() ; it++){
+            if(this==(*it)) {continue;}
 
             while(1){
-                std::string choix;
+                string choix;
                 cout << "La ville : " << this->name << " est elle une destination directe vers : " << (*it)->getName() << "(O/n)" << endl;
                 cin >> choix;
                 if(choix != "O" && choix != "o" && choix!="N" && choix != "n"){
@@ -21,7 +21,7 @@ namespace aerial_network{
                 }
                 if(choix=="O" || choix=="o"){
                     CityMod4* tmpPtr=dynamic_cast<CityMod4*>(*it);
-                    nw->matrix[num][tmpPtr->num]=true;
+                    nw->matrix[this->num][tmpPtr->num]=true;
                     break;
                 }
                 if(choix=="N" || choix=="n"){
@@ -29,10 +29,7 @@ namespace aerial_network{
                 }
             }
         }
-        return;
     }
 
-    void CityMod4::searchDest(vector<City*> tmp, City* city, int& counterFix, int counterTmp){
-        return;
-    }
+    int CityMod4::getNum(){ return num; }
 } // aerial_network

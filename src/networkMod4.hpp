@@ -4,14 +4,16 @@
 
 namespace aerial_network{
     class NetworkMod4:public Network{
+            friend class CityMod4;
+            int matrixPath(int a, int b, std::vector<int> path, int* steps);
         public:
             NetworkMod4()=default;
             ~NetworkMod4();
             std::vector<std::vector<bool>> matrix;
-            // Finir ces fonctions permettant d'ajouter pour chaque vector "BOOL" les correspondances de chaques villes.
-            void displayCities()override;
             void addCities()override;
-            void place();
+            void defaultCityMod4();
+            void searchDest()override;
+            void displayCities()override;
     };
 }
 #endif // NETWORKMOD4_HP
