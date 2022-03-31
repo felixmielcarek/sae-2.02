@@ -31,6 +31,8 @@ Une fois excécuté, un fichier **_exe_** est créé dans le répertoire **_./bi
 
 Afin d'excécuter le programme.
 
+### Documentation :
+
 Pour générer la documention doxygen :
 
 ```
@@ -41,6 +43,12 @@ Pour supprimer les fichiers objets, l'executable et la documentation html :
 
 ```
 make clean
+```
+
+De plus du _compteRendu.pdf_ disponible sur karuta et par mail. Sa version _compteRendu.md_ est disponible dans
+
+```
+./doc/compteRendu.md
 ```
 
 ### Répartition des documents dans l'arborescence
