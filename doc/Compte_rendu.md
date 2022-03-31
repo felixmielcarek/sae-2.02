@@ -5,19 +5,19 @@ Accessibilité dans un réseau aérien :
 
 </br>
 
-## **Sommaire :**
-
 ## Table des matières
 
 * 1.[Description des implémentations choisi :](#chapter1) 
     * 1.1 [Méthode N°1](#section_1_1)
     * 1.2 [Méthode N°2](#section_1_2)
+    * 1.3 [UML](#section_1_3)
 * 2. [Explication des algorithmes développés](#chapter2)
     * 2.1 [Méthode N°1](#section_2_1)
     * 2.2 [Méthode N°2](#section_2_2)
 * 3. [Comparaison de complexité](#chapter3)
     * 3.1 [Méthode N°1](#section_3_1)
     * 3.2 [Méthode N°2](#section_3_2)
+    * 3.3 [Pertinance des algorithmes](#section_3_3)
 * 4. [Peut-il résoudre d'autres problèmes ?](#chapter4)
 
 </br>
@@ -25,7 +25,7 @@ Accessibilité dans un réseau aérien :
 </br>
 </br>
 
-### Description des implémentations choisi <a class="anchor" id="#chapter1"></a>
+## Description des implémentations choisi <a class="anchor" id="#chapter1"></a>
 
 #### __Méthode N°1__ <a class="anchor" id="section_1_1"></a>
 
@@ -50,6 +50,12 @@ nous utilisons la première liste de villes afin de définirs la tailles de la m
 Nous faisons correspondre la place de la ville dans la première liste pour insérers à la même place dans ce vector. La première ville dans la première liste était situé à la colonnes et première ligne de la matrice, la seconde aussi et ainsi de suite.
 
 pour les booléens correspondant aux destinations, nous demandons ensuite, à l'utilisateur les destinations directes de chacunes des villes et changeons les valeurs booléennes situé à la positions correspondantes (TRUE correspond à un vol direct).
+
+</br>
+
+#### __UML__ <a class="anchor" id="section_1_3"></a>
+
+![image](uml.png)
 
 </br>
 </br>
@@ -109,6 +115,10 @@ Une fois à la **_Ville D_** le test d'arrivé est validé, on retiens le nombre
 
 On se rend donc à la **_Ville A_** qui est la dernière destination possible. Elle ne respecte évidement pas les tests. On retourne alors le plus petit trajet retenu (il n'y en a qu'un ici).
 
+</br>
+</br>
+</br>
+
 #### __Méthode N°2__ :<a class="anchor" id="section_2_2"></a>
 
 Nous utilisons le même type de fonction récursive pour la seconde méthode.
@@ -150,6 +160,9 @@ On se retrouve donc avec une boucle itérative faisant **_n_** opérations, de p
 On se retrouve donc avec une compléxité de **_(n * 2 + 4) * n-1_**
 
 #### __Méthode N°2__ :<a class="anchor" id="section_3_2"></a>
+
+
+#### __Pertinance des algorithmes__  :<a class="anchor" id="section_3_3"></a>
 
 </br>
 </br>
