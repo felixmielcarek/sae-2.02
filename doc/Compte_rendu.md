@@ -11,14 +11,14 @@ Accessibilité dans un réseau aérien :
     * 1.1 [Méthode N°1](#section_1_1)
     * 1.2 [Méthode N°2](#section_1_2)
     * 1.3 [UML](#section_1_3)
-* 2. [Explication des algorithmes développés](#chapter2)
+* 2.[Explication des algorithmes développés](#chapter2)
     * 2.1 [Méthode N°1](#section_2_1)
     * 2.2 [Méthode N°2](#section_2_2)
-* 3. [Comparaison de complexité](#chapter3)
+* 3.[Comparaison de complexité](#chapter3)
     * 3.1 [Méthode N°1](#section_3_1)
     * 3.2 [Méthode N°2](#section_3_2)
     * 3.3 [Pertinance des algorithmes](#section_3_3)
-* 4. [Peut-il résoudre d'autres problèmes ?](#chapter4)
+* 4.[Peut-il résoudre d'autres problèmes ?](#chapter4)
 
 </br>
 </br>
