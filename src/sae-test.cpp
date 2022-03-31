@@ -130,7 +130,7 @@ void menuCityMod4(){
         nw.displayCities();
         cout << endl;
         nw.searchDest();
-        cout << "(Appuyer sur Entrer pour continuer)\n";
+        cout << " (Appuyer sur Entrer pour continuer)\n";
         system("read");
         cout << CLEAR;
     }
