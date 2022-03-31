@@ -8,7 +8,7 @@ Cette SAE à été réaliser par : MIELCAREK Félix, JAULT Aurian et DE LA FUENT
 
 ### Informations importantes :
 
-Si la résolution de votre écran est trop petite (souvent sur les ordinateurs portables), il est possible qu'il y'ai des bugs d'affichage avec les matrices. Pour résoudre ce problème il faut réduire la taille de la police de son terminal ('Ctrl -').
+Si la résolution de votre écran est trop petite (souvent sur les ordinateurs portables), il est possible qu'il y'ai des bugs d'affichage avec les matrices. Pour résoudre ce problème il faut réduire la taille de la police de son terminal ('Ctrl + -').
 
 Dans le code : 
 
@@ -17,7 +17,7 @@ Dans le code :
 
 ### Utilisation : 
 
-Un make file est livré avec le code, il est excécutable grâce à la commande :
+Un Makefile est livré avec le code, il est excécutable grâce à la commande :
 
 ```
 make
@@ -30,6 +30,18 @@ Une fois excécuté, un fichier **_exe_** est créé dans le répertoire **_./bi
 ```
 
 Afin d'excécuter le programme.
+
+Pour générer la documention doxygen :
+
+```
+make docu
+```
+
+Pour supprimer les fichiers objets, l'executable et la documentation html :
+
+```
+make clean
+```
 
 ### Répartition des documents dans l'arborescence
 
