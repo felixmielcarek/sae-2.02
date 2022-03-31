@@ -1,6 +1,6 @@
 /**
  *\file cityMod1.hpp
- *\brief déclaration de la classe City (selon le modèle 1, en liste), ainsi que la déclaration de ses méthodes
+ *\brief déclaration de la classe fille cityMod1 (selon le modèle 1, en liste), ainsi que la déclaration de ses méthodes
  *\author DE LA FUENTE Axel
  */
 
@@ -13,7 +13,6 @@
 
 namespace aerial_network{
 
-    //Axel
     class CityMod1 : public City{
         std::vector<City*> dest;
     public:

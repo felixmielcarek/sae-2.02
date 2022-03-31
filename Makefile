@@ -10,7 +10,6 @@ SRC=$(wildcard src/*.cpp)
 # les fichiers objets (.o)
 OBJ=$(patsubst src/%.cpp,obj/%.o,$(SRC))
 
-
 #edition des liens : génération de l'exécutable à partir des .o 
 bin/exe: $(OBJ)
 	LC_ALL=C $(CC) $(OBJ) -o $@
@@ -19,8 +18,12 @@ bin/exe: $(OBJ)
 obj/%.o: src/%.cpp 
 	LC_ALL=C $(CC) $(CFLAGS) -c $< -o $@
 
+# génération du fichier html à partir du Doxyfile déjà créé
+docu:
+	cd doc && doxygen
+
 #nettoyage : destruction des .o et de l'exécutable
 clean:
-	rm obj/*.o bin/exe
+	rm obj/*.o bin/exe; if [ -d doc/html ] ; then rm -rf doc/html ; fi
 
 

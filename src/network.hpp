@@ -1,3 +1,9 @@
+/**
+ *\file network.hpp
+ *\brief délcaration de la classe Network ainsi que de ses méthodes. 
+ *\author MIELCAREK Félix
+ */
+
 #ifndef NETWORK_HPP
 #define NETWORK_HPP
 
@@ -5,7 +11,6 @@
 #include <iostream>
 #include "city.hpp"
 
-//fel
 namespace aerial_network{
     class City;
     class Network{

@@ -1,11 +1,18 @@
+/**
+ *\file networkMod4.hpp
+ *\brief délcaration de la classe NetworkMod4 ainsi que de ses méthodes. 
+ *\author MIELCAREK Félix
+ */
+
 #ifndef NETWORKMOD4_HPP
 #define NETWORKMOD4_HPP
 #include "network.hpp"
+#include "exception.hpp"
 
 namespace aerial_network{
     class NetworkMod4:public Network{
             friend class CityMod4;
-            int matrixPath(int a, int b,std::vector<int>& path);
+            int matrixPath(int a,const int b,std::vector<int>& path);
         public:
             NetworkMod4()=default;
             ~NetworkMod4();
