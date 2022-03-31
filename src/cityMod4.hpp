@@ -1,10 +1,15 @@
+/**
+ *\file cityMod4.hpp
+ *\brief délcaration de la classe fille cityMod4 (selon le modèle 4, en matrice) ainsi que de ses méthodes. 
+ *\author MIELCAREK Félix
+ */
+
 #ifndef CITYMOD4_HPP
 #define CITYMOD4_HPP
 
 #include "city.hpp"
 #include "networkMod4.hpp"
 
-//fel
 namespace aerial_network{
     class CityMod4:public City{
         int num;

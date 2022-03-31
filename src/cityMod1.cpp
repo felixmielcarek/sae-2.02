@@ -26,12 +26,12 @@ namespace aerial_network{
             if (this==(*it)){
                 continue;
             }
-            while(1){
+            while(true){
                 std::string choix;
                 cout << "La ville : " << this->name << " est elle une destination directe vers : " << (*it)->getName() << "(O/n)" << endl;
                 cin >> choix;
                 if(choix != "O" && choix != "o" && choix!="N" && choix != "n"){
-                    cout << "Donner une réponse valide : (O/n)" << endl;
+                    cout << "Donner une réponse valide : (o/n)" << endl;
                     continue;
                 }
                 if(choix=="O" || choix=="o"){
@@ -57,7 +57,7 @@ namespace aerial_network{
     }
     
     /**
-     *\brief fonction d'affichage de la CityMod1 appellé avec toute ses destination possible
+     *\brief fonction d'affichage de la CityMod1 appellé avec toutes ses destinations possible
      *\author DE LA FUENTE Axel
      */
     void CityMod1::displayCity(){
@@ -85,18 +85,15 @@ namespace aerial_network{
      *\author DE LA FUENTE Axel
      */
     void CityMod1::searchDest(vector<City*> tmp, City* city, int& counterFix, int counterTmp){
-        //cout << "\n---\n" << this->getName() << "\n---" << endl;
         // check si deja passer par cette ville
         for(vector<City*>::iterator it=tmp.begin();it!=tmp.end();it++){
             if(*it==this){
-                //cout << "deja présent" << endl;
                 return;
             }
         }
         tmp.push_back(this);
         // check si on est arrivé à la dest et change le compteur
         if(this==city){
-            //cout << "TROUVE" << endl;
             if(counterTmp<counterFix){
                 counterFix=counterTmp;
             }

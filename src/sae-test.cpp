@@ -1,9 +1,15 @@
+/**
+ *\file sae-test.cpp
+ *\brief code des fonctions de test et des fonctions de création de réseau (main) 
+ */
+
 #include <iostream>
 #include <string>
 #include "network.hpp"
 #include "cityMod1.hpp"
 #include "cityMod4.hpp"
 #include "city.hpp"
+#include "exception.hpp"
 
 //code couleur
 #define NC "\e[0m"
@@ -16,7 +22,10 @@
 using namespace std;
 using namespace aerial_network;
 
-//Axel
+/**
+ *\brief fonction de test grâce à la création d'un réseau par défaut
+ *\author DE LA FUENTE Axel
+ */
 void testDefaultCityMod1(){
     Network nwDefault;
     City* c1 = new CityMod1{"Clermont-Ferrand"};
@@ -54,14 +63,28 @@ void testDefaultCityMod1(){
     
     nwDefault.displayCities();
     cout <<endl;
-    nwDefault.searchDest();
+    try{
+        nwDefault.searchDest();
+    }
+    catch(const SamePlaceException &e){
+        cout <<endl;
+    }
+    catch(const NonExistentCityException &ex){
+        cout <<endl;
+    }
+    catch(const NonExistentPathException &ex){
+        cout <<endl;
+    }
 }
 
-//Axel
+/**
+ *\brief sous-menu afin de gérer les réseaux sous le modèle 1 (NetworkMod1)
+ *\author DE LA FUENTE Axel
+ */
 void menuCityMod1(){
     string flag;
     cout << CLEAR;
-    while(1){
+    while(true){
         string choice;
         cout << YEL "\n===== Menu Réseau (modèle liste (1)) =====" NC <<endl;
         cout << "1. Utiliser le réseau par défaut" << endl;
@@ -80,7 +103,7 @@ void menuCityMod1(){
             cout << CLEAR CYN "\n----- Bienvenue dans la réseau par défaut -----" NC << endl;
             testDefaultCityMod1();
             cout << "(Appuyer sur Entrer pour continuer)\n";
-            system("read"); // pas ouff -> mais marche bien
+            system("read");
             cout << CLEAR;
         }
         else if(choice == "2"){
@@ -90,7 +113,18 @@ void menuCityMod1(){
             cout << CLEAR CYN "---- Réseau ----" NC << endl;
             nw.displayCities();
             cout << endl;
-            nw.searchDest();
+            try{
+                nw.searchDest();
+            }
+            catch(const SamePlaceException &e){
+                cout <<endl;
+            }
+            catch(const NonExistentCityException &ex){
+                cout <<endl;
+            }
+            catch(const NonExistentPathException &ex){
+                cout <<endl;
+            }
             cout << "(Appuyer sur Entrer pour continuer)\n";
             system("read");
             cout << CLEAR;
@@ -98,7 +132,10 @@ void menuCityMod1(){
     }
 }
 
-//fel
+/**
+ *\brief sous-menu afin de gérer les réseaux sous le modèle 4 (NetworkMod4)
+ *\author MIELCAREK Félix
+ */
 void menuCityMod4(){
     cout << CLEAR;
     while(true){
@@ -127,20 +164,39 @@ void menuCityMod4(){
             nw.addCities();
         }
         cout << CLEAR CYN "---- Réseau ----" NC << endl;
-        nw.displayCities();
-        cout << endl;
-        nw.searchDest();
+        try{
+            nw.displayCities();
+            cout << endl;
+            try{
+                nw.searchDest();
+            }
+            catch(const SamePlaceException &e){
+                cout <<endl;
+            }
+            catch(const NonExistentCityException &ex){
+                cout <<endl;
+            }
+            catch(const NonExistentPathException &ex){
+                cout <<endl;
+            }
+        }
+        catch(const NoCityException& e){
+            cout << endl;
+        }
+        
         cout << " (Appuyer sur Entrer pour continuer)\n";
         system("read");
         cout << CLEAR;
     }
 }
 
-// Axel
+/**
+ *\brief menu principale afin de gérer le choix du réseau utilisé
+ *\author DE LA FUENTE Axel
+ */
 int main(){
-    string flag;
     cout << CLEAR;
-    while(1){
+    while(true){
         string choice;
         cout << RED "\n===== Menu Principal =====" NC <<endl;
         cout << "1. Utiliser le réseau en liste" << endl;

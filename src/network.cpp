@@ -1,10 +1,20 @@
+/**
+ *\file network.cpp
+ *\brief code des méthodes de la classe Network
+ */
+
+#include <algorithm>
 #include "network.hpp"
+#include "cityMod1.hpp"
+#include "exception.hpp"
+
 using namespace std;
 
-#include "cityMod1.hpp"
-
 namespace aerial_network{
-    //fel
+    /**
+     *\brief constructeur de Network
+     *\author MIELCAREK Félix
+     */
     Network::~Network(){
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;
@@ -12,13 +22,19 @@ namespace aerial_network{
         cities.clear();
     }
 
-    //fel
+    /**
+     *\brief fonciton interactive permmettant des créer dynamiquement des CityMod1 et de les ajouter au 
+     *\brief conteneur 'cities' de Network
+     *\author MIELCAREK Félix
+     */
     void Network::addCities(){
         string tmpName;
         City* c;
         
         cout << "Entrez le nom de la ville numéro "<<(cities.size()+1)<<" : ";
         cin >> tmpName;
+
+
 
         while(tmpName != "-1"){
             c = new CityMod1{tmpName};
@@ -34,15 +50,23 @@ namespace aerial_network{
         }
     }
     
-    // Axel
+    /**
+     *\brief fonction permettant l'appelle de la fonction d'affichage de chacune des villes du conteneur
+     *\brief 'cities'
+     *\author DE LA FUENTE Axel
+     */
     void Network::displayCities(){
         for(vector<City*>::iterator it=cities.begin(); it!=cities.end();it++){
             CityMod1* tmpPtr=dynamic_cast<CityMod1*>(*it);
             tmpPtr->displayCity();
         }
     }
-
-    // Axel
+    
+    /**
+     *\brief fonction interactive demandant où l'utilisateur souhaite se rendre, et lui renvoie le nombre
+     *\brief de vol nécessaire, ou bien lui dit si ce n'est pas possible.
+     *\author DE LA FUENTE Axel
+     */
     void Network::searchDest(){
         cout << "De quelle ville partez vous ?\n";
         int count=1;
@@ -52,6 +76,9 @@ namespace aerial_network{
         }
         int choix;
         cin >> choix;
+
+        if(choix<0 || choix>static_cast<int>(cities.size())){ throw NonExistentCityException{}; }
+
         cout << "Dans quelle ville allez vous ?\n";
         count=1;
         for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
@@ -60,6 +87,9 @@ namespace aerial_network{
         }
         int choix1;
         cin >> choix1;
+
+        if(choix1<0 || choix1>static_cast<int>(cities.size())){ throw NonExistentCityException{}; }
+
         vector<City*> tmp;
         count=1;
         City* c1;
@@ -74,22 +104,23 @@ namespace aerial_network{
             count=count+1;
         }
         if(c1==c2){
-        cout << "Vous êtes déjà sur place inutile de prendre un vol ! :D\n";
+            throw SamePlaceException{};
         }
         else{
             int x=999;
             CityMod1* tmpC1=dynamic_cast<CityMod1*>(c1);
             tmpC1->searchDest(tmp,c2,x,0);
-            if(x==999){
-                cout << "Il est impossible de se rendre à " << c2->getName() << " depuis " << c1->getName() << endl;
-            }
+            if(x==999){ throw NonExistentPathException{c1->getName(),c2->getName()}; }
             else{
                 cout << "Vous pouvez aller a votre destination en " << x << " coups\n";
             }
         }
     }
 
-    //Axel
+     /**
+     *\brief fonction setter, afin d'ajouter des cityMod1 dans le conteneur 'cities'
+     *\author DE LA FUENTE Axel
+     */
     void Network::pushCities(City* c){
         cities.push_back(c);
     }

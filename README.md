@@ -10,6 +10,11 @@ Cette SAE à été réaliser par : MIELCAREK Félix, JAULT Aurian et DE LA FUENT
 
 Si la résolution de votre écran est trop petite (souvent sur les ordinateurs portables), il est possible qu'il y'ai des bugs d'affichage avec les matrices. Pour résoudre ce problème il faut réduire la taille de la police de son terminal ('Ctrl -').
 
+Dans le code : 
+
+- cityMod1 correspond au modèle 1 proposé par le sujet (les listes)
+- cityMod4 correspond au modèle 4 proposé par le sujet (les matrices)
+
 ### Utilisation : 
 
 Un make file est livré avec le code, il est excécutable grâce à la commande :

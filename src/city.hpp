@@ -1,3 +1,9 @@
+/**
+ *\file city.hpp
+ *\brief délcaration de la classe mère city ainsi que de ses méthodes. 
+ *\author MIELCAREK Félix
+ */
+
 #ifndef CITY_HPP
 #define CITY_HPP
 
@@ -5,8 +11,8 @@
 #include <iostream>
 #include <vector>
 
-//fel
 namespace aerial_network{
+    // Félix
     class City{
     protected:
         std::string name;

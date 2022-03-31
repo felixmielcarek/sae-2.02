@@ -1,3 +1,8 @@
+/**
+ *\file netwotkMod4.cpp
+ *\brief code de la classe NetworkMod4 ainsi que de ses méthodes. 
+ */
+
 #include "networkMod4.hpp"
 #include "cityMod4.hpp"
 #include <string>
@@ -6,7 +11,10 @@
 using namespace std;
 
 namespace aerial_network{
-    //fel
+    /**
+     *\brief constructeur de NetworkMod4
+     *\author MIELCAREK Félix
+     */
     NetworkMod4::~NetworkMod4(){
         for ( vector<City*>::iterator i = cities.begin(); i != cities.end(); ++i ){
             delete *i;
@@ -14,7 +22,11 @@ namespace aerial_network{
         cities.clear();
     }
 
-    //fel
+    /**
+     *\brief fonciton interactive permmettant des créer dynamiquement des CityMod4 et de les ajouter au 
+     *\brief conteneur 'cities' de NetworkMod4
+     *\author MIELCAREK Félix
+     */
     void NetworkMod4::addCities(){
         string tmpName;
         City* c;
@@ -46,7 +58,11 @@ namespace aerial_network{
         }
     }
 
-    //fel
+    /**
+     *\brief fonciton permmettant des créer dynamiquement des CityMod1 par défaut et de les ajouter au 
+     *\brief conteneur 'cities' de NetworkMod4
+     *\author MIELCAREK Félix
+     */
     void NetworkMod4::defaultCityMod4(){
         cities.push_back(new CityMod4{"Lyon",0});
         cities.push_back(new CityMod4{"Clermont-Ferrand",1});
@@ -85,7 +101,11 @@ namespace aerial_network{
         cout <<endl;
     }
     
-    //fel
+   /**
+     *\brief fonction interactive demandant où l'utilisateur souhaite se rendre, et lui renvoie le nombre
+     *\brief de vol nécessaire, ou bien lui dit si ce n'est pas possible.
+     *\author MIELCAREK Félix 
+     */
     void NetworkMod4::searchDest(){
         cout << "De quelle ville partez vous ?\n";
         int count=1;
@@ -96,34 +116,41 @@ namespace aerial_network{
         int start;
         cin >> start;
 
+        if(start<0 || start>static_cast<int>(cities.size())) { throw NonExistentCityException{}; }
+
         cout << "Dans quelle ville allez vous ?\n";
         count=1;
         for(vector<City*>::iterator it=this->cities.begin();it!=this->cities.end();it++){
-
             cout << count << "- " << (*it)->getName() << endl;
             count=count+1;
         }
         int end;
         cin >> end;
 
+        if(end<0 || end>static_cast<int>(cities.size())) { throw NonExistentCityException{}; }
+
+        if(start==end){ throw SamePlaceException{}; }
+
         vector<int> path;
 
         int res = matrixPath(start-1,end-1,path);
 
-        if(res==0){
-            // throw exception
-        }
+        if(res==0){ throw NonExistentPathException{cities[start-1]->getName(),cities[end-1]->getName()}; }
         if(res == 1){
             cout << "La ville " << cities[end-1]->getName() << " est accessible par les étapes suivantes : " << cities[path[0]]->getName();
             for(int i=1 ; i<static_cast<int>(path.size()) ; i++){
                 cout << " - " << cities[path[i]]->getName();
             }
-        }
-        
+        }        
     }
-
-    //fel
-    int NetworkMod4::matrixPath(int a , int b,vector<int>& path){
+     /**
+     *\brief fonction de recherche à travers la matrice 'dest' d'un réseau NetworkMod4, le chemin le plus court, si il en existe un.
+     *\param a indice de la ville dont on parcours les destinations (selon le contexte)
+     *\param b indice de la ville destination
+     *\param path conteneur des indices des villes 
+     *\author MIELCAREK Félix
+     */
+    int NetworkMod4::matrixPath(int a ,const int b,vector<int>& path){
         path.push_back(a);
 
         // si la ville recherchée est accessible directement
@@ -187,11 +214,16 @@ namespace aerial_network{
         return 1;
     }
 
-    //fel
+    /**
+     *\brief fonction d'affichage de la CityMod4 appellé avec toutes ses destinations possible sous formes de matrice
+     *\author MIELCAREK Félix
+     */
     void NetworkMod4::displayCities(){
         string empty;
         empty.resize(10,' ');
         string tabEmptyDisplay;
+
+        if(cities.empty()){ throw NoCityException{}; }
 
         for(int i=0 ; i<static_cast<int>(cities.size()) ; i++){
             tabEmptyDisplay+="|\t"+empty+"\t";
