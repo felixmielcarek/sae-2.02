@@ -29,7 +29,7 @@ Accessibilité dans un réseau aérien :
 
 #### __Méthode N°1__ <a class="anchor" id="section_1_1"></a>
 
-Choix de l'implémentation
+Choix de l'implémentation :
 
 Pour la première implémentation nous avons choisi la représentation N°1 donnée par le sujet, la liste de villes. Pour chaque ville, nous faisons correspondre, dans un vecteur de pointeur de ville, la liste des destinations possibles. Nous remplissons ce vector en demandant pour chaque ville déjà existante s'il existe un vol direct vers cet aéroport. Nous ajoutions alors les villes de destination au vector qui correspond à la vile de départ.
 
@@ -41,7 +41,7 @@ Nous avons aussi implémenté une liste de villes par défaut afin de facilement
 
 #### __Méthode N°2__ <a class="anchor" id="section_1_2"></a>
 
-Choix de l'implémentation
+Choix de l'implémentation :
 
 Pour la seconde implémentation nous avons choisi d'utiliser une modélisation qui nous semblait la plus différente de la première à savoir la matrice (le modèle 4 proposé sur le sujet). Pour représenter ce modèle de réseau, nous avons d'abord réfléchi à ce qu'il devait contenir, nous avons conclus qu'il pourrait être intéressant de créer une classe dérivée du réseau du premier modèle. En effet notre classe ```Network``` était composé d'un vecteur de ville qui nous était aussi utile pour la matrice. Les méthodes de construction, d'affichage et de recherche dans le réseau était aussi nécessaire pour le modèle avec matrice et nécessitait juste une surcharge.
 
