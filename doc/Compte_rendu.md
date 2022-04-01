@@ -121,28 +121,31 @@ On se rend donc à la **_Ville A_** qui est la dernière destination possible. E
 
 #### __Méthode N°2__ :<a class="anchor" id="section_2_2"></a>
 
-Nous utilisons le même type de fonction récursive pour la seconde méthode.
+Pour ce deuxième algorithme nous commençons par demander la ville de départ et la ville d'arrivée. Cette algorithme est lui aussi récursif, avec ces deux données nous initialisons donc le premier tour dans le contexte de la ville de départ. Nous allons illustrer ici aussi notre algorithme par un exemple, admettons que nous voulions aller du point A au point E et que notre matrice puisse être représenté de la manière suivante (les croix représente notre booléen ```true``` c'est à dire lorsque la destination vers la ville est disponible directement):
 
-Nous demandons à l'utilisateur la ville de destination et de départ, dans ce cas-ci nous lui demandons de rentrer le numéros correspondant à la ville. Car ville possède une place dans les colonnes et lignes de la matrice. afin que cela soit plus facile pour chercher les chemins possibles.
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
 
-Une fois que nous avons c'est deux coordonnées, disons A pour la ville de départ et B pour la destination. Nous verifions dans un premier temps, si à la case aux coordonnées [A][B] est égale à "TRUE" se qui voudrait dire qu'un vole direct existe entre ces deux ville.
+Pour commencer notre algorithme va regarder si la ville d'arrivée est disponible directement, ce n'est pas le cas donc l'algorithme se relance dans le contexte de la première ville accessible donc B: 
 
-Si ce vol n'existe nous verifions s'il est possible de partir de la ville de départ, on regarde si la ligne A est remplie de "FALSE" se qui voudrait dire qu'aucune ville n'est accessible à partir de cette ville. Nous affichons alors dans le terminal que cela n'est pas possible.
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
 
-Ensuite, on crée un tableau dans lequel nous stockerons chacune des étapes pour arriver à destination, pour l'instant nous ajoutons seulement la ville de départ : A.
+L'algorithme detecte qu'aucune ville n'est accessible, il revient donc dans le contexte précédent (A) est passe à la ville accessible suivante donc C:
 
-maintenant, nous parcourons la ligne A et appelons cette même fonction lorsque nous rencontrons un "TRUE". Nous changeons la ville de départ avec celle qui correspont à la colonne où est situé "TRUE" et gardons la même destination.
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
 
-Comme vous l'avez compris pour la première méthode, la fonction vas s'éxécuter autant de fois qu'il à de chemins possibles afin de trouver le ou les chemins possible.
+L'algorithme mémorise à chaque tour le chemin actuel, à cette étape c'est donc **A - C**. La premier ville accessible est **A**, comme elle est déjà dans le chemin mémorisé elle est donc sauté. Le contexte suivant est donc D: 
 
-Nous vérifions si le chemin trouvé pour l'étape suivante n'a pas déjà été utilisé avant. (Grâce à la liste des étapes crée au début).
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
 
-nous listons tous les chemins possible, puis nous choisissons le plus (En comptant le nombre d'étape effectués) et affichons le trajet possible dans le terminal.
+L'algorithme détecte que la ville d'arrivée est disponible, il sauvegarde le chemin qui est donc actuellement ici **A - C - D**. Ensuite il remonte les contexte jusqu'à en trouver un pour qui il restait des chemins à explorer, ici il remonte donc jusqu'au contexte A:
 
-Vous pouvez voir un schéma des étapes réalisé par programme si on demande un trajet entre la Ville A et la ville D. (Cele ne montre pas les listes d'étapes, mais simplement la recherche de chemins possible)
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
 
-![Première et deuxième étapes du procéssus](1.png)
-![Troisième et dernière étapes du procéssus](2.png)
+Nous avions déjà parcouru les contextes **B** et **C**, le suivant est donc D:
+
+IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+
+La ville d'arrivée est ici aussi accessible directement, comme précédement le chemin (**A - D** est sauvegardé) et on remonte les contextes jusqu'à en trouver un pour qui il reste des contextes à explorer. Ici tout a été fait, on peut donc comparer les différents chemins sauvegardés pour ne garder que le plus court, ici on renvoie donc le chemin **A - D**, c'est exactement ce que nous voulions.
 
 </br>
 </br>
