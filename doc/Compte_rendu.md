@@ -123,27 +123,27 @@ On se rend donc à la **_Ville A_** qui est la dernière destination possible. E
 
 Pour ce deuxième algorithme nous commençons par demander la ville de départ et la ville d'arrivée. Cette algorithme est lui aussi récursif, avec ces deux données nous initialisons donc le premier tour dans le contexte de la ville de départ. Nous allons illustrer ici aussi notre algorithme par un exemple, admettons que nous voulions aller du point A au point E et que notre matrice puisse être représenté de la manière suivante (les croix représente notre booléen ```true``` c'est à dire lorsque la destination vers la ville est disponible directement):
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](1matrix.png)
 
 Pour commencer notre algorithme va regarder si la ville d'arrivée est disponible directement, ce n'est pas le cas donc l'algorithme se relance dans le contexte de la première ville accessible donc B: 
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](2matrix.png)
 
 L'algorithme detecte qu'aucune ville n'est accessible, il revient donc dans le contexte précédent (A) est passe à la ville accessible suivante donc C:
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](3matrix.png)
 
 L'algorithme mémorise à chaque tour le chemin actuel, à cette étape c'est donc **A - C**. La premier ville accessible est **A**, comme elle est déjà dans le chemin mémorisé elle est donc sauté. Le contexte suivant est donc D: 
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](4matrix.png)
 
-L'algorithme détecte que la ville d'arrivée est disponible, il sauvegarde le chemin qui est donc actuellement ici **A - C - D**. Ensuite il remonte les contexte jusqu'à en trouver un pour qui il restait des chemins à explorer, ici il remonte donc jusqu'au contexte A:
+L'algorithme détecte que la ville d'arrivée est disponible, il sauvegarde le chemin qui est donc actuellement ici **A - C - D**. Ensuite il remonte les contexte jusqu'à en trouver un pour lequel il restait des chemins à explorer, ici il remonte donc jusqu'au contexte A:
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](1matrix.png)
 
 Nous avions déjà parcouru les contextes **B** et **C**, le suivant est donc D:
 
-IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE
+![image](4matrix.png)
 
 La ville d'arrivée est ici aussi accessible directement, comme précédement le chemin (**A - D** est sauvegardé) et on remonte les contextes jusqu'à en trouver un pour qui il reste des contextes à explorer. Ici tout a été fait, on peut donc comparer les différents chemins sauvegardés pour ne garder que le plus court, ici on renvoie donc le chemin **A - D**, c'est exactement ce que nous voulions.
 
