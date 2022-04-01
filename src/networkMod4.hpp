@@ -13,10 +13,10 @@ namespace aerial_network{
     class NetworkMod4:public Network{
             friend class CityMod4;
             int matrixPath(int a,const int b,std::vector<int>& path);
+            std::vector<std::vector<bool>> matrix;
         public:
             NetworkMod4()=default;
             ~NetworkMod4();
-            std::vector<std::vector<bool>> matrix;
             void addCities()override;
             void defaultCityMod4();
             void searchDest()override;
