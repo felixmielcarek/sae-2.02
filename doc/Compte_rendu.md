@@ -43,13 +43,13 @@ Nous avons aussi implémenté une liste de villes par défaut afin de facilement
 
 Choix de l'implémentation
 
-Pour la seconde implémentation, nous avons choisi la 4eme méthode proposée par le sujet, la matrice des villes. Pour implémenter la matrice en c++, nous avons choisi d'insérer des vecteurs de types booléen dans un vector.
+Pour la seconde implémentation nous avons choisi d'utiliser une modélisation qui nous semblait la plus différente de la première à savoir la matrice (le modèle 4 proposé sur le sujet). Pour représenter ce modèle de réseau, nous avons d'abord réfléchi à ce qu'il devait contenir, nous avons conclus qu'il pourrait être intéressant de créer une classe dérivée du réseau du premier modèle. En effet notre classe ```Network``` était composé d'un vecteur de ville qui nous était aussi utile pour la matrice. Les méthodes de construction, d'affichage et de recherche dans le réseau était aussi nécessaire pour le modèle avec matrice et nécessitait juste une surcharge.
 
-nous utilisons la première liste de villes afin de définirs la tailles de la matrice (Autant de vectors Booléens que de ville, paraillement pour le tableau de booléens à l'intérieur d'eux)
+Cette classe fille devait juste contenir en plus les liaisons entre les villes, et non pas qu'elles soient contenu dans les villes comme pour le précédent modèle. Nous avons donc créé une classe abstraite pour les villes et chaque modèle à sa propre classe fille de ville. Dans ce modèle notre ville contient juste un numéro (son emplacement dans la matrice) en plus d'un nom. 
 
-Nous faisons correspondre la place de la ville dans la première liste pour insérers à la même place dans ce vector. La première ville dans la première liste était situé à la colonnes et première ligne de la matrice, la seconde aussi et ainsi de suite.
+Notre matrice est composé d'un vecteur de vecteur de booléen. Chaque indice du premier vecteur représente une ville. Chaque vecteur inclut dans le premier fait la même taille que celui-ci, pour une ville cela représente donc les destinations auquelles elle a accès. Chaque booléen contenu dans ce deuxième vecteur est évalué à ```true``` si un vol est disponible vers la ville de l'indice correspondant. On peut simboliser la matrice de la façon suivante :
 
-pour les booléens correspondant aux destinations, nous demandons ensuite, à l'utilisateur les destinations directes de chacunes des villes et changeons les valeurs booléennes situé à la positions correspondantes (TRUE correspond à un vol direct).
+![image](matriceMod4.png)
 
 </br>
 
