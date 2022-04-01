@@ -70,6 +70,16 @@ namespace aerial_network{
         cities.push_back(new CityMod4{"Albi",3});
         cities.push_back(new CityMod4{"Perpignan",4});
         cities.push_back(new CityMod4{"Paris",5});
+        cities.push_back(new CityMod4{"Toulouse",6});
+        cities.push_back(new CityMod4{"Nantes",7});
+        cities.push_back(new CityMod4{"Strasbourg",8});
+        cities.push_back(new CityMod4{"Marseille",9});
+        cities.push_back(new CityMod4{"Bordeaux",10});
+        cities.push_back(new CityMod4{"Grenoble",11});
+        cities.push_back(new CityMod4{"Bayonne",12});
+        cities.push_back(new CityMod4{"Lille",13});
+        cities.push_back(new CityMod4{"Rouen",14});
+        cities.push_back(new CityMod4{"Orléans",15});
 
         int cs = static_cast<int>(cities.size());
 
@@ -84,19 +94,89 @@ namespace aerial_network{
         
         matrix[0][4]=true;
         matrix[0][5]=true;
+        matrix[0][10]=true;
+        matrix[0][11]=true;
+        matrix[0][15]=true;
+
         matrix[1][0]=true;
         matrix[1][4]=true;
         matrix[1][5]=true;
+        matrix[1][8]=true;
+        matrix[1][12]=true;
+        matrix[1][15]=true;
+
         matrix[2][0]=true;
         matrix[2][5]=true;
+        matrix[2][9]=true;
+        matrix[2][13]=true;
+
         matrix[3][1]=true;
         matrix[3][4]=true;
         matrix[4][3]=true;
         matrix[4][5]=true;
+        matrix[3][9]=true;
+        matrix[3][10]=true;
+        matrix[4][11]=true;
+        matrix[4][14]=true;
+
         matrix[5][0]=true;
         matrix[5][1]=true;
         matrix[5][2]=true;
         matrix[5][4]=true;
+        matrix[5][6]=true;
+        matrix[5][7]=true;
+        matrix[5][10]=true;
+        matrix[5][13]=true;
+    
+        matrix[6][0]=true;
+        matrix[6][3]=true;
+        matrix[6][7]=true;
+        matrix[6][13]=true;
+        
+        matrix[7][1]=true;
+        matrix[7][4]=true;
+        matrix[7][8]=true;
+        matrix[7][14]=true;
+
+        matrix[8][2]=true;
+        matrix[8][5]=true;
+        matrix[8][9]=true;
+        matrix[8][15]=true;
+
+        matrix[9][6]=true;
+        matrix[9][9]=true;
+        matrix[9][13]=true;
+        matrix[9][14]=true;
+
+        matrix[10][1]=true;
+        matrix[10][3]=true;
+        matrix[10][6]=true;
+        matrix[10][12]=true;
+
+        matrix[11][2]=true;
+        matrix[11][4]=true;
+        matrix[11][7]=true;
+        matrix[11][13]=true;
+
+        matrix[12][3]=true;
+        matrix[12][5]=true;
+        matrix[12][8]=true;
+        matrix[12][14]=true;
+
+        matrix[13][4]=true;
+        matrix[13][6]=true;
+        matrix[13][9]=true;
+        matrix[13][15]=true;
+
+        matrix[14][0]=true;
+        matrix[14][1]=true;
+        matrix[14][7]=true;
+        matrix[14][10]=true;
+
+        matrix[15][2]=true;
+        matrix[15][5]=true;
+        matrix[15][8]=true;
+        matrix[15][11]=true;
         
         cout <<endl;
     }
