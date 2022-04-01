@@ -164,6 +164,11 @@ On se retrouve donc avec une compléxité de **_(n * 2 + 4) * n-1_**
 
 #### __Méthode N°2__ :<a class="anchor" id="section_3_2"></a>
 
+Dans un des contexte de notre algorithme, il y a une boucle **for** avec un nombre de tour proportionnel au nombre de ville. Au maximum la complexité est donc de *O*(n-1) (*n* étant le nombre de ville) en prenant en compte qu'une ville ne peut pas aller vers elle-même.
+
+Il faut aussi prendre en compte que comme l'algorithme est récursif, il est appelé plusieurs fois et même autant de fois qu'il y a de ville accessible. La recursivité nous montre qu'au maximum la complexité de l'algorithme est de *O*(n-1) (dans le cas où toutes les villes peuvent partout).
+
+En prenant ces deux facteurs en commun, la complexité maximum de notre algorithme peut donc être évalué à *O*(n²) (ou quadratique).
 
 #### __Pertinance des algorithmes__  :<a class="anchor" id="section_3_3"></a>
 
